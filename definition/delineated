@@ -1,0 +1,892 @@
+-crop-
+:prdx_1::coefficient for calculating potential aboveground monthly production as a function of solar radiation outside the atmosphere:
+:ppdf_1::optimum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_2::maximum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_3::left curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_4::right curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:bioflg::flag indicating whether production should be reduced by physical obstruction = 0 production should not be reduced = 1 production should be reduced
+= 1 gC/m2:
+:biok5::level of aboveground standing dead + 10% strucc1 C at which production is reduced to half maximum due to physical obstruction by the dead material, used only when bioflg = 1 gC/m2:
+:pltmrf::planting month reduction factor to limit seedling growth should be 1.0 for grass:
+:fulcan::value of aglivc at full canopy cover, above which potential production is not reduced:
+:frtcindx::plant growth type = 0 use Great Plains equation = 1 perennial plant = 2 annual plant = 3 perennial plant, growing degree day implementation, dynamic carbon allocation = 4 nongrain filling annual plant, growing degree day implementation, dynamic carbon allocation = 5 grain filling annual plant, growing degree day implementation, dynamic carbon allocation = 6 grain filling annual plant that requires a vernalization period i.e. winter wheat, growing degree day implementation, dynamic carbon allocation
+= 2, 4, 5 or 6
+= 2, 4, 5 or 6
+= 2, 4, 5 or 6
+= 2, 4, 5 or 6
+= 2, 4, 5 or 6
+= 1 or 3
+= 1 or 3
+= 1 or 3
+= 1 or 3:
+:frtc_1::fraction of C allocated to roots at planting, with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6:
+:frtc_2::fraction of C allocated to roots at time frtc3, with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6
+value is reached, used when frtcindx = 2, 4, 5 or 6
+frtc5 maximum increase in the fraction of C going to the roots due to nutrient stress, used when frtcindx = 2, 4, 5 or 6:
+:frtc_3::with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6
+time after planting months with soil temperature greater than rtdtmp at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6:
+:frtc_4::maximum increase in the fraction of C going to the roots due to water stress, used when frtcindx = 2, 4, 5 or 6:
+:frtc_5::maximum increase in the fraction of C going to the roots due to nutrient stress, used when frtcindx = 2, 4, 5 or 6:
+:cfrtcn_1::maximum fraction of C allocated to roots under maximum nutrient stress, used when frtcindx = 1 or 3:
+:cfrtcn_2::minimum fraction of C allocated to roots with no nutrient stress, used when frtcindx = 1 or 3:
+:cfrtcw_1::maximum fraction of C allocated to roots under maximum water stress, used when frtcindx = 1 or 3:
+:cfrtcw_2::minimum fraction of C allocated to roots with no water stress, used when frtcindx = 1 or 3:
+:biomax::biomass level above which the minimum and maximum C/E ratios of the new shoot increments equal pramn*,2 and pramx*,2 respectively g biomass/m2:
+:pramn_1_1::minimum C/N ratio with zero biomass:
+:pramn_2_1::minimum C/P ratio with zero biomass:
+:pramn_3_1::minimum C/S ratio with zero biomass:
+:pramn_1_2::minimum C/N ratio with biomass greater than or equal to biomax:
+:pramn_2_2::minimum C/P ratio with biomass greater than or equal to biomax:
+:pramn_3_2::minimum C/S ratio with biomass greater than or equal to biomax:
+:pramx_1_1::maximum C/N ratio with zero biomass:
+:pramx_2_1::maximum C/P ratio with zero biomass:
+:pramx_3_1::maximum C/S ratio with zero biomass:
+:pramx_1_2::maximum C/N ratio with biomass greater than or equal to biomax:
+:pramx_2_2::maximum C/P ratio with biomass greater than or equal to biomax:
+:pramx_3_2::maximum C/S ratio with biomass greater than or equal to biomax:
+:prbmn_1_1::intercept parameter for computing minimum C/N ratio for below ground matter as a linear function of annual precipitation:
+:prbmn_2_1::intercept parameter for computing minimum C/P ratio for below ground matter as a linear function of annual precipitation:
+:prbmn_3_1::intercept parameter for computing minimum C/S ratio for below ground matter as a linear function of annual precipitation:
+:prbmn_1_2::slope parameter for computing minimum C/N ratio for below ground matter as a linear function of annual precipitation:
+:prbmn_2_2::slope parameter for computing minimum C/P ratio for below ground matter as a linear function of annual precipitation:
+:prbmn_3_2::slope parameter for computing minimum C/S ratio for below ground matter as a linear function of annual precipitation:
+:prbmx_1_1::intercept parameter for computing maximum C/N ratios for below ground matter as a linear function of annual precipitation:
+:prbmx_2_1::intercept parameter for computing maximum C/P ratios for below ground matter as a linear function of annual precipitation:
+:prbmx_3_1::intercept parameter for computing maximum C/S ratios for below ground matter as a linear function of annual precipitation:
+:prbmx_1_2::slope parameter for computing maximum C/N ratios for below ground matter as a linear function of annual precipitation:
+:prbmx_2_2::slope parameter for computing maximum C/P ratios for below ground matter as a linear function of annual precipitation:
+:prbmx_3_2::slope parameter for computing maximum C/S ratios for below ground matter as a linear function of annual precipitation:
+:fligni_1_1::intercept for equation to predict lignin content fraction based on annual rainfall for aboveground material:
+:fligni_2_1::slope for equation to predict lignin content fraction based on annual rainfall for aboveground material. For crops, set to 0.:
+:fligni_1_2::intercept for equation to predict lignin content fraction based on annual rainfall for juvenile live fine root material:
+:fligni_2_2::slope for equation to predict lignin content fraction based on annual rainfall for juvenile live fine root material. For crops, set to 0.:
+:fligni_1_3::intercept for equation to predict lignin content fraction based on annual rainfall for mature live fine root material:
+:fligni_2_3::slope for equation to predict lignin content fraction based on annual rainfall for mature live fine root material. For crops, set to 0.:
+:himax::harvest index maximum fraction of aboveground live C in grain:
+:hiwsf::harvest index water stress factor = 0 no effect of water stress = 1 no grain yield with maximum water stress:
+:himon_1::number of months prior to harvest in which to begin accumulating water stress effect on harvest index:
+:himon_2::number of months prior to harvest in which to stop accumulating water stress effect on harvest index:
+:efrgrn_1::fraction of the aboveground N which goes to grain:
+:efrgrn_2::fraction of the aboveground P which goes to grain:
+:efrgrn_3::fraction of the aboveground S which goes to grain:
+:vlossp::fraction of aboveground plant N which is volatilized occurs at harvest for crops or at senescence for grasses:
+:fsdeth_1::maximum shoot death rate at very dry soil conditions fraction/month for getting the monthly shoot death rate, this fraction is multiplied times a reduction factor depending on the soil water status:
+:fsdeth_2::fraction of shoots which die during senescence month must be greater than or equal to 0.4:
+:fsdeth_3::additional fraction of shoots which die when aboveground live C is greater than fsdeth4:
+:fsdeth_4::the level of aboveground C above which shading occurs and shoot senescence increases:
+:fallrt::fall rate fraction of standing dead which falls each month:
+:rdrj::maximum juvenile fine root death rate at very dry soil conditions fraction/month for getting the monthly root death rate, this fraction is multiplied times a reduction factor depending on the soil water status:
+:rdrm::maximum mature fine root death rate at very dry soil conditions fraction/month for getting the monthly root death rate, this fraction is multiplied times a reduction fraction depending on the soil water status:
+:rdsrfc::the fraction of the fine roots that are transferred into the surface litter layer SRTUCC1 and METABC1 upon root death, the remainder of the roots will go to the soil litter layer STRUCC2 and METABC2:
+:rtdtmp::at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6
+physiological shutdown temperature for root death and change in shoot/root ratio:
+:crprtf_1::fraction of N transferred to a vegetation storage pool from grass/crop leaves at death:
+:crprtf_2::fraction of P transferred to a vegetation storage pool from grass/crop leaves at death:
+:crprtf_3::fraction of S transferred to a vegetation storage pool from grass/crop leaves at death:
+:mrtfrac::fraction of fine root production that goes to mature roots:
+:snfxmx_1::symbiotic N fixation maximum for grassland/crop g N fixed/g C new growth:
+:del13c::delta 13C value for stable isotope labeling:
+:co2ipr_1::in a grassland/crop system, the effect on plant production of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2itr_1::in a grassland/crop system, the effect on transpiration rate of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_1_1::in a grassland/crop system, the effect on minimum C/N ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_1_2::in a grassland/crop system, the effect on minimum C/P ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_1_3::in a grassland/crop system, the effect on minimum C/S ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_2_1::in a grassland/crop system, the effect on maximum C/N ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_2_2::in a grassland/crop system, the effect on maximum C/P ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_1_2_3::in a grassland/crop system, the effect on maximum C/S ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2irs_1::in a grassland/crop system, the effect on rootshoot ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:kmrsp_1::the fraction of net primary production that goes to the maintenance respiration storage pool for crops:
+:ckmrspmx_1::maximum fraction of aboveground live C that goes to maintenance respiration for crops:
+:ckmrspmx_2::maximum fraction of juvenile live fine root C that goes to maintenance respiration for crops:
+:ckmrspmx_3::maximum fraction of mature live fine root C that goes to maintenance respiration for crops:
+:cgresp_1::maximum fraction of aboveground live C that goes to maintenance respiration for crops:
+:cgresp_2::maximum fraction of juvenile fine root live C that goes to maintenance respiration for crops:
+:cgresp_3::maximum fraction of mature fine root live C that goes to maintenance respiration for crops:
+:no3pref_1::fraction of N update that is NO3:
+:claypg::number of soil layers used to determine water and mineral N, P, and S that are available for crop growth:
+:cmix::rate of mixing of surface SOM2C and soil SOM2C for grass/crop system, this value will also be used when running a savanna:
+:tmpgerm::germination temperature for the growing degree day submodel degrees C:
+:ddbase::number of degree days required to trigger a senescence event for a perennial FRTCINDX = 3, maturity and harvest for a nongrain filling annual FRTCINDX = 4, or to reach anthesis flowering for a grain filling annual FRTCINDX = 5 or 6 degrees C:
+:tmpkill::temperature at which growth will stop when using the growing degree day submodel degrees C:
+:basetemp_1::base temperature for crop growth, growing degree days will accumulate only on days when the average temperature is greater than the base temperature for the crop degrees C:
+:basetemp_2::ceiling on the maximum temperature used to accumulate growing degree days degrees C:
+:mnddhrv::minimum number of degree days from anthesis flowering to harvest for grain filling annuals FRTCINDX = 5 or 6 degrees C:
+:mxddhrv::maximum number of degree days from anthesis flowering to harvest for grain filling annuals FRTCINDX = 5 or 6 degrees C:
+:cmxturn::maximum turnover rate per month of juvenile fine roots to mature fine roots through aging:
+-cult-
+:cultra_1::fraction of aboveground live transferred to standing dead:
+:cultra_2::fraction of aboveground live transferred to surface litter:
+:cultra_3::fraction of aboveground live transferred to the top soil layer:
+:cultra_4::fraction of standing dead transferred to surface litter:
+:cultra_5::fraction of standing dead transferred to top soil layer:
+:cultra_6::fraction of surface litter transferred to top soil layer:
+:cultra_7::fraction of roots transferred to top soil layer:
+:clteff_1::cultivation factor for som1 decomposition functions as a multiplier for increased decomposition in the month of the cultivation:
+:clteff_2::cultivation factor for som2 decomposition functions as a multiplier for increased decomposition in the month of the cultivation:
+:clteff_3::cultivation factor for som3 decomposition functions as a multiplier for increased decomposition in the month of the cultivation:
+:clteff_4::cultivation factor for soil structural material decomposition functions as a multiplier for increased decomposition in the month of the cultivation:
+-fert-
+:feramt_1::amount of N to be added gN/m2 in scheduled month:
+:feramt_2::amount of P to be added gP/m2 in scheduled month:
+:feramt_3::amount of S to be added gS/m2 in scheduled month:
+:aufert::key for automatic fertilization = 0.0 no automatic fertilization < 1.0 automatic fertilizer may be applied to remove some nutrient stress without increasing nutrient concentration above the minimum  level the value of is the fraction of potential C production temperature and moisture limited which will be maintained > 1.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations above the minimum level a value of between 1.0 and 2.0 determines the extent to which nutrient concentration is maintained between the minimum and maximum levels = 2.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations to the maximum level:
+:ninhib::reduction factor on nitrification rates due to nitrification inhibitors added with fertilizer, 1.0 = no reduction:
+:ninhtm::number of weeks to simulate the effect of the nitrogen inhibitor from the fertilizer addition:
+:frac_nh4::fraction of N fertilizer that is NH4+ ammonium:
+:frac_no2::fraction of N fertilizer that is NO3 nitrate:
+-fire-
+:flfrem::fraction of live shoots removed by a fire event:
+:fdfrem_1::fraction of standing dead plant material removed by a fire event:
+:fdfrem_2::fraction of surface litter removed by a fire event:
+:fdfrem_3::fraction of dead fine branches removed by a fire event:
+:fdfrem_4::fraction of dead large wood removed by a fire event:
+:fret_1_1::fraction of C in the burned aboveground material live shoots, standing dead, and litter returned to the system following a fire event:
+:fret_1_2::fraction of N in the burned aboveground material returned to the system following a fire event:
+:fret_1_3::fraction of P in the burned aboveground material returned to the system following a fire event:
+:fret_1_4::fraction of S in the burned aboveground material returned to the system following a fire event:
+:fret_2_1::fraction of C in the burned dead fine branch material returned to the system following a fire event:
+:fret_2_2::fraction of N in the burned dead fine branch material returned to the system following a fire event:
+:fret_2_3::fraction of P in the burned dead fine branch material returned to the system following a fire event:
+:fret_2_4::fraction of S in the burned dead fine branch material returned to the system following a fire event:
+:fret_3_1::fraction of C in the burned dead large wood material returned to the system following a fire event:
+:fret_3_2::fraction of N in the burned dead large wood material returned to the system following a fire event:
+:fret_3_3::fraction of P in the burned dead large wood material returned to the system following a fire event:
+:fret_3_4::fraction of S in the burned dead large wood material returned to the system following a fire event:
+:frtsh::additive effect of burning on root/shoot ratio:
+:fnue_1::effect of fire on increase in maximum C/N ratio of shoots:
+:fnue_2::effect of fire on increase in maximum C/N ratio of roots:
+-fix-
+:adep_1::depth of soil layer 1 only nlayer+1 values used cm
+0 depth of soil layer 10 only nlayer+1 values used cm:
+:adep_2::depth of soil layer 2 only nlayer+1 values used cm:
+:adep_3::depth of soil layer 3 only nlayer+1 values used cm:
+:adep_4::depth of soil layer 4 only nlayer+1 values used cm:
+:adep_5::depth of soil layer 5 only nlayer+1 values used cm:
+:adep_6::depth of soil layer 6 only nlayer+1 values used cm:
+:adep_7::depth of soil layer 7 only nlayer+1 values used cm:
+:adep_8::depth of soil layer 8 only nlayer+1 values used cm:
+:adep_9::depth of soil layer 9 only nlayer+1 values used cm:
+:adep_10::depth of soil layer 10 only nlayer+1 values used cm:
+:agppa::intercept parameter in the equation estimating potential aboveground biomass production for calculation of root/shoot ratio used only if frtc1 = 0 g/m2/y:
+:agppb::slope parameter in the equation estimating potential above ground biomass production for calculation of root/shoot ratio used only if frtc1 = 0 g/m2/y/cm NOTE is multiplied by annual precipitation cm:
+:aneref_1::ratio of rain/potential evapotranspiration below which there is no negative impact of soil anaerobic conditions on decomposition:
+:aneref_2::ratio of rain/potential evapotranspiration above which there is maximum negative impact of soil anaerobic conditions on decomposition:
+:aneref_3::minimum value of the impact of soil anaerobic conditions on decomposition functions as a multiplier for the maximum decomposition rate:
+:animpt::slope term used to vary the impact of soil anaerobic conditions on decomposition flows to the passive soil organic matter pool:
+:awtl_1::weighting factor for transpiration loss for layer 1 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots
+0 weighting factor for transpiration loss for layer 10 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_2::weighting factor for transpiration loss for layer 2 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_3::weighting factor for transpiration loss for layer 3 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_4::weighting factor for transpiration loss for layer 4 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_5::weighting factor for transpiration loss for layer 5 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_6::weighting factor for transpiration loss for layer 6 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_7::weighting factor for transpiration loss for layer 7 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_8::weighting factor for transpiration loss for layer 8 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_9::weighting factor for transpiration loss for layer 9 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_10::weighting factor for transpiration loss for layer 10 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:bgppa::intercept parameter in the equation estimating potential below ground biomass production for calculation of root/shoot ratio used only if frtc1 = 0 g/m2/y:
+:bgppb::slope parameter in the equation estimating potential below ground biomass production for calculation of root/shoot ratio used only if frtc1 = 0 g/m2/y NOTE is multiplied by annual precipitation cm:
+:co2ppm_1::initial parts per million for CO2 effect:
+:co2ppm_2::final parts per million for CO2 effect:
+:co2rmp::flag indicating whether CO2 effect should be = 0 step function = 1 ramp function:
+:damr_1_1::fraction of surface N absorbed by residue:
+:damr_1_2::fraction of surface P absorbed by residue:
+:damr_1_3::fraction of surface S absorbed by residue:
+:damr_2_1::fraction of soil N absorbed by residue:
+:damr_2_2::fraction of soil P absorbed by residue:
+:damr_2_3::fraction of soil S absorbed by residue:
+:damrmn_1::minimum C/N ratio allowed in residue after direct absorption:
+:damrmn_2::minimum C/P ratio allowed in residue after direct absorption:
+:damrmn_3::minimum C/S ratio allowed in residue after direct absorption:
+:dec1_1::maximum surface structural decomposition rate, the fraction of the pool that turns over each year:
+:dec1_2::maximum soil structural decomposition rate, the fraction of the pool that turns over each year:
+:dec2_1::maximum surface metabolic decomposition rate, the fraction of the pool that turns over each year:
+:dec2_2::maximum soil metabolic decomposition rate, the fraction of the pool that turns over each year:
+:dec3_1::maximum decomposition rate of surface organic matter with active turnover, the fraction of the pool that turns over each year:
+:dec3_2::maximum decomposition rate of soil organic matter with active turnover, the fraction of the pool that turns over each year:
+:dec4::maximum decomposition rate of soil organic matter with slow turnover, the fraction of the pool that turns over each year:
+:dec5_1::maximum decomposition rate of surface organic matter with intermediate turnover, the fraction of the pool that turns over each year:
+:dec5_2::maximum decomposition rate of soil organic matter with intermediate turnover, the fraction of the pool that turns over each year:
+:deck5::available soil water content at which shoot and root death rates are half maximum cm:
+:dligdf::difference in delta 13C for lignin compared to whole plant delta 13C:
+:dresp::discrimination factor for 13C during decomposition of organic matter due to microbial respiration:
+:edepth::depth of the single soil layer where C, N, P, and S dynamics are calculated only affects C, N, P, S loss by erosion:
+:elitst::effect of litter on soil temperature relative to live and standing dead biomass:
+:enrich::the ment factor for SOM losses:
+:favail_1::fraction of N available per month to plants:
+:favail_3::fraction of S available per month to plants:
+:favail_4::minimum fraction of P available per month to plants:
+:favail_5::maximum fraction of P available per month to plants:
+:favail_6::mineral N in surface layer corresponding to maximum fraction of P available g/m2:
+:fleach_1::intercept value for a normal month to compute the fraction of minerl N, P, and S which will leach to the next layer when there is a saturated water flow normal leaching is a function of sand content:
+:fleach_2::slope value for a normal month to compute the fraction of minerl N, P, and S which will leach to the next layer when there is a saturated water flow normal leaching is a function of sand content:
+:fleach_3::leaching fraction multiplier for N to compute the fraction of mineral N which will leach to the next layer when there is a saturated water flow normal leaching is a function of sand content:
+:fleach_4::leaching fraction multiplier for P to compute the fraction of mineral P which will leach to the next layer when there is a saturated water flow normal leaching is a function of sand content:
+:fleach_5::leaching fraction multiplier for S to compute the fraction of mineral S which will leach to the next layer when there is a saturated water flow normal leaching is a function of sand content:
+:fwloss_1::scaling factor for interception and evaporation of precipitation by live and standing dead biomass:
+:fwloss_2::scaling factor for bare soil evaporation of precipitation h2olos:
+:fwloss_3::scaling factor for transpiration water loss h2olos:
+:fwloss_4::scaling factor for potential evapotranspiration pevap:
+:fxmca::intercept for effect of biomass on nonsymbiotic soil N fixation used only when nsnfix = 1:
+:fxmcb::slope control for effect of biomass on nonsymbiotic soil N fixation used only when nsnfix = 1:
+:fxmxs::maximum monthly nonsymbiotic soil Nfixation rate reduced by effect of NP ratio, used when nsnfix = 1:
+:fxnpb::N/P control for Nfixation based on availability of top soil layer used when nsnfix = 1:
+:gremb::grazing effect multiplier for grzeff types 4, 5, 6:
+:idef::flag for method of computing water effect on decomposition = 1 option using the relative water content of soil 015 cm = 2 ratio option rainfall/potential evaporation rate = 3 water filled pore space:
+:lhzf_1::lower horizon factor for active pool = fraction of active pool SOM1CI2,* used in computation of lower horizon pool sizes for soil erosion routines:
+:lhzf_2::lower horizon factor for slow pool = fraction of slow pool SOM2CI* used in computation of lower horizon pool sizes for soil erosion routines:
+:lhzf_3::lower horizon factor for passive pool = fraction of passive pool SOM3CI* used in computation of lower horizon pool sizes for soil erosion routines:
+:minlch::critical water flow for leaching of minerals cm of H2O leached below 30 cm soil depth:
+:nsnfix::= 1
+= 1
+= 1
+= 1
+equals 1 if nonsymbiotic N fixation should be based on NP ratio in mineral pool, otherwise nonsymbiotic N fixation is based on annual precipitation:
+:ntspm::number of time steps per month for the decomposition submodel:
+:omlech_1::intercept for the effect of sand on leaching of organic compounds:
+:omlech_2::slope for the effect of sand on leaching of organic compounds:
+:omlech_3::the amount of water that needs to flow out of water layer 2 to leach organic C at the maximum rate cm/month:
+:p1co2a_1::intercept parameter which controls flow from surface organic matter with fast turnover to CO2 fraction of C lost to CO2 when there is no sand in the soil:
+:p1co2a_2::intercept parameter which controls flow from soil organic matter with fast turnover to CO2 fraction of C lost to CO2 when there is no sand in the soil:
+:p1co2b_1::slope parameter which controls flow from surface organic matter with fast turnover to CO2 slope is multiplied by the fraction sand content of the soil:
+:p1co2b_2::slope parameter which controls flow from soil organic matter with fast turnover to CO2 slope is multiplied by the fraction sand content of the soil:
+:p2co2_1::controls flow from surface organic matter with intermediate turnover to CO2 fraction of C lost as CO2 during decomposition:
+:p2co2_2::controls flow from soil organic matter with intermediate turnover to CO2 fraction of C lost as CO2 during decomposition:
+:p3co2::controls flow from soil organic matter with slow turnover rate to CO2 fraction of C lost as CO2 during decomposition:
+:pabres::amount of residue which will give maximum direct absorption of N gC/m2:
+:pcemic1_1_1::maximum C/N ratio for surface microbial pool:
+:pcemic1_1_2::maximum C/P ratio for surface microbial pool:
+:pcemic1_1_3::maximum C/S ratio for surface microbial pool:
+:pcemic1_2_1::minimum C/N ratio for surface microbial pool:
+:pcemic1_2_2::minimum C/P ratio for surface microbial pool:
+:pcemic1_2_3::minimum C/S ratio for surface microbial pool:
+:pcemic1_3_1::mimimum N content of decomposing aboveground material, above which the C/N ratio of the surface microbes equals pcemic2,*:
+:pcemic1_3_2::mimimum P content of decomposing aboveground material, above which the C/P ratio of the surface microbes equals pcemic2,*:
+:pcemic1_3_3::mimimum S content of decomposing aboveground material, above which the C/S ratio of the surface microbes equals pcemic2,*:
+:pcemic2_1_1::maximum C/N ratio for surface intermediate pool:
+:pcemic2_1_2::maximum C/P ratio for surface intermediate pool:
+:pcemic2_1_3::maximum C/S ratio for surface intermediate pool:
+:pcemic2_2_1::minimum C/N ratio for surface intermediate pool:
+:pcemic2_2_2::minimum C/P ratio for surface intermediate pool:
+:pcemic2_2_3::minimum C/S ratio for surface intermediate pool:
+:pcemic2_3_1::mimimum N content of decomposing aboveground material, above which the C/N ratio of the surface intermediate pool equals pcemic2,*:
+:pcemic2_3_2::mimimum P content of decomposing aboveground material, above which the C/P ratio of the surface intermediate pool equals pcemic2,*:
+:pcemic2_3_3::mimimum S content of decomposing aboveground material, above which the C/S ratio of the surface intermediate pool equals pcemic2,*:
+:peftxa::intercept parameter for regression equation to compute the effect of soil texture on the microbe decomposition rate the effect of texture when there is no sand in the soil:
+:peftxb::slope parameter for the regression equation to compute the effect of soil texture on the microbe decomposition rate the slope is multiplied by the sand content fraction:
+:phesp_1::minimum pH for determining the effect of pH on the solubility of secondary P flow of secondary P to mineral P for texesp2 = m * pH input + b, m and b calculated using these phesp values
+4 and texesp3:
+:phesp_2::value of texesp2, the solubility of secondary P, corresponding to minimum pH /yr:
+:phesp_3::maximum pH for determining effect on solubility of secondary P flow of secondary P to mineral P for texesp2 = m * pH input + b, m and b calculated using these phesp values:
+:phesp_4::value of texesp2, the solubility of secondary P, corresponding to maximum pH /yr:
+:pligst_1::effect of lignin on surface structural or fine branch and large wood decomposition:
+:pligst_2::effect of lignin on soil structural or coarse root decomposition:
+:pmco2_1::surface controls flow from surface metabolic to CO2 fraction of C lost as CO2 during decomposition:
+:pmco2_2::soil controls flow from soil metabolic to CO2 fraction of C lost as CO2 during decomposition:
+:pmnsec_1::slope for N controls the flow from mineral to secondary N /yr:
+:pmnsec_2::slope for P controls the flow from mineral to secondary P /yr:
+:pmnsec_3::slope for S controls the flow from mineral to secondary S /yr:
+:pmntmp::effect of biomass on minimum surface temperature:
+:pmxbio::maximum dead biomass standing dead + 10% litter level for soil temperature calculation and for calculation of the potential negative effect on plant growth of physical obstruction by standing dead and litter:
+:pmxtmp::effect of biomass on maximum surface temperature:
+:pparmn_1::N controls the flow from parent material to mineral compartment fraction of parent material that flows to mineral N, P, and S:
+:pparmn_2::P controls the flow from parent material to mineral compartment used when texepp1 is not = 1 fraction of parent material that flows to mineral N, P, and S
+in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
+:pparmn_3::S controls the flow from parent material to mineral compartment fraction of parent material that flows to mineral N, P, and S:
+:pprpts_1::the minimum ratio of available water to PET which would completely limit production assuming WC = 0:
+:pprpts_2::the effect of WC on the intercept, allows the user to increase the value of the intercept and thereby increase the slope of the line:
+:pprpts_3::the lowest ratio of available water to PET at which there is no restriction on production:
+:ps1co2_1::surface controls amount of CO2 loss when structural decomposes to som1:
+:ps1co2_2::soil controls amount of CO2 loss when structural decomposes to som1:
+:ps1s3_1::intercept for the effect of clay on the control for the flow from soil organic matter with fast turnover to som with slow turnover fraction of C from som1c to som3c:
+:ps1s3_2::slope for the effect of clay on the control for the flow from soil organic matter with fast turnover to som with slow turnover fraction of C from som1c to som3c:
+:ps2s3_1::intercept value which controls flow from soil organic matter with intermediate turnover to soil organic matter with slow turnover fraction of C from som2c to som3c:
+:ps2s3_2::slope value which controls flow from soil organic matter with intermediate turnover to soil organic matter with slow turnover fraction of C from som2c to som3c:
+:psecmn_1::N controls the flow from secondary to mineral N:
+:psecmn_2::P controls the flow from secondary to mineral P
+in the weathering equation = 1 include the effect of pH and sand content using the equation specified by texesp2 a function of pH and phesp14 and texesp3:
+:psecmn_3::S controls the flow from secondary to mineral S:
+:psecoc1::controls the flow from secondary to occluded P:
+:psecoc2::controls the back flow from occluded to secondary P:
+:rad1p_1_1::intercept used to calculate addition term for C/N ratio of slow SOM formed from surface active pool:
+:rad1p_2_1::slope used to calculate addition term for C/N ratio of slow SOM formed from surface active pool:
+:rad1p_3_1::minimum allowable C/N used to calculate addition term for C/N ratio of slow SOM formed from surface active pool:
+:rad1p_1_2::intercept used to calculate addition term for C/P ratio of slow SOM formed from surface active pool:
+:rad1p_2_2::slope used to calculate addition term for C/P ratio of slow SOM formed from surface active pool:
+:rad1p_3_2::minimum allowable C/P used to calculate addition term for C/P ratio of slow SOM formed from surface active pool:
+:rad1p_1_3::intercept used to calculate addition term for C/S ratio of slow SOM formed from surface active pool:
+:rad1p_2_3::slope used to calculate addition term for C/S ratio of slow SOM formed from surface active pool:
+:rad1p_3_3::minimum allowable C/S used to calculate addition term for C/S ratio of slow SOM formed from surface active pool:
+:rcestr_1::C/N ratio for structural material fixed parameter value:
+:rcestr_2::C/P ratio for structural material fixed parameter value:
+:rcestr_3::C/S ratio for structural material fixed parameter value:
+:rictrl::root impact control term used by rtimp used for calculating the impact of root biomass on nutrient availability:
+:riint::root impact intercept used by rtimp used for calculating the impact of root biomass on nutrient availability:
+:rsplig::fraction of lignin flow in structural decomposition lost as CO2:
+:seed::random number generator value:
+:spl_1::intercept parameter for metabolic vs. structural split:
+:spl_2::slope parameter for metabolic split fraction metabolic is a function of lignin to N ratio:
+:strmax_1::maximum amount of structural material in surface layer that will decompose gC/m2:
+:strmax_2::maximum amount of structural material belowground that will decompose gC/m2:
+:texepp_1::is not = 1 fraction of parent material that flows to mineral N, P, and S
+texture effect on parent P mineralization = 0 use pparmn2 in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
+:texepp_2::x location of inflection point used in determining texture effect on parent P mineralization:
+:texepp_3::y location of inflection point used in determining texture effect on parent P mineralization:
+:texepp_4::step size distance from the maximum point to the minimum point used in determining texture effect on parent P mineralization:
+:texepp_5::slope of the line at the inflection point used in determining texture effect on parent P mineralization:
+:texesp_1::texture effect on secondary P flow to mineral P = 0 to use psecmn2 in the weathering equation = 1 include the effect of pH and sand content using the equation specified by texesp2 a function of pH and phesp14 and texesp3:
+:texesp_3::slope value used in determining effect of sand content on secondary P flow to mineral P:
+:teff_1::x location of inflection point, for determining the temperature component of DEFAC, the decomposition factor:
+:teff_2::y location of inflection point, for determining the temperature component of DEFAC, the decomposition factor:
+:teff_3::step size distance from the maximum point to the minimum point, for determining the temperature component of DEFAC, the decomposition factor:
+:teff_4::slope of line at inflection point, for determining the temperature component of DEFAC, the decomposition factor:
+:tmelt_1::minimum temperature above which at least some snow will melt:
+:tmelt_2::ratio between degrees above the minimum and cm of snow that will melt:
+:varat1_1_1::maximum C/N ratio for material entering som1:
+:varat1_2_1::minimum C/N ratio for material entering som1:
+:varat1_3_1::amount N present when minimum ratio applies:
+:varat1_1_2::maximum C/P ratio for material entering som1:
+:varat1_2_2::minimum C/P ratio for material entering som1:
+:varat1_3_2::amount P present when minimum ratio applies:
+:varat1_1_3::maximum C/S ratio for material entering som1:
+:varat1_2_3::minimum C/S ratio for material entering som1:
+:varat1_3_3::amount S present when minimum ratio applies:
+:varat21_1_1::maximum C/N ratio for material entering surface som2:
+:varat21_2_1::minimum C/N ratio for material entering surface som2:
+:varat21_3_1::amount N present when minimum ratio applies:
+:varat21_1_2::maximum C/P ratio for material entering surface som2:
+:varat21_2_2::minimum C/P ratio for material entering surface som2:
+:varat21_3_2::amount P present when minimum ratio applies:
+:varat21_1_3::maximum C/S ratio for material entering surface som2:
+:varat21_2_3::minimum C/S ratio for material entering surface som2:
+:varat21_3_3::amount S present when minimum ratio applies:
+:varat22_1_1::maximum C/N ratio for material entering soil som2:
+:varat22_2_1::minimum C/N ratio for material entering soil som2:
+:varat22_3_1::amount N present when minimum ratio applies:
+:varat22_1_2::maximum C/P ratio for material entering soil som2:
+:varat22_2_2::minimum C/P ratio for material entering soil som2:
+:varat22_3_2::amount P present when minimum ratio applies:
+:varat22_1_3::maximum C/S ratio for material entering soil som2:
+:varat22_2_3::minimum C/S ratio for material entering soil som2:
+:varat22_3_3::amount S present when minimum ratio applies:
+:varat3_1_1::maximum C/N ratio for material entering som3:
+:varat3_2_1::minimum C/N ratio for material entering som3:
+:varat3_3_1::amount N present when minimum ratio applies:
+:varat3_1_2::maximum C/P ratio for material entering som3:
+:varat3_2_2::minimum C/P ratio for material entering som3:
+:varat3_3_2::amount P present when minimum ratio applies:
+:varat3_1_3::maximum C/S ratio for material entering som3:
+:varat3_2_3::minimum C/S ratio for material entering som3:
+:varat3_3_3::amount S present when minimum ratio applies:
+:vlosse::fraction per year of excess N i.e. N left in the soil after nutrient uptake by the plant which is volatilized:
+:vlossg::multiplier for equation to compute volatilization loss that occurs as a function of gross mineralization:
+-graz-
+:flgrem::fraction of live shoots removed by a grazing event:
+:fdgrem::fraction of standing dead removed by a grazing event:
+:gfcret::fraction of consumed C which is excreted in faeces and urine:
+:gret_1::fraction of consumed N which is excreted in faeces and urine should take into account N losses due to leaching or volatilization from the manure:
+:gret_2::fraction of consumed P which is excreted in faeces and urine should take into account P losses due to leaching or volatilization from the manure:
+:gret_3::fraction of consumed S which is excreted in faeces and urine should take into account S losses due to leaching or volatilization from the manure:
+:grzeff::effect of grazing on production = 0 grazing has no direct effect on production = 1 linear impact on agp = 2 quadratic impact on agp and root/shoot ratio = 3 quadratic impact on root/shoot ratio = 4 linear impact on root/shoot ratio = 5 quadratic impact on agp and linear impact on root/shoot ratio = 6 linear impact on agb and root/shoot ratio:
+:fecf_1::fraction of excreted N which goes into faeces rest goes into urine:
+:fecf_2::fraction of excreted P which goes into faeces rest goes into urine:
+:fecf_3::fraction of excreted S which goes into faeces rest goes into urine:
+:feclig::lignin content of faeces:
+-harv-
+:aglrem::fraction of aboveground live which will not be affected by harvest operations:
+:bglrem::fraction of belowground live which will not be affected by harvest operations:
+:flghrv::flag indicating if grain is to be harvested = 0 if the grain is not to be harvested = 1 if the grain is to be harvested:
+:rmvstr::fraction of the aboveground residue that will be removed:
+:remwsd::fraction of the remaining residue that will be left standing:
+:hibg::fraction of roots that will be harvested:
+-irri-
+:auirri::controls application of automatic irrigation = 0 automatic irrigation is off = 1 irrigate to field capacity = 2 irrigate with a specified amount of water applied = 3 irrigate to field capacity plus PET
+= 1 or 2
+= 2 cm:
+:fawhc::fraction of available water holding capacity below which automatic irrigation will be used when auirri = 1 or 2:
+:irraut::amount of water to apply automatically when auirri = 2 cm:
+:irramt::amount of water to apply regardless of soil water status cm:
+-omad-
+:astgc::grams of C added with the addition of organic matter g/m2:
+:astlbl::fraction of added C which is labeled, when C is added as a result of the addition of organic matter:
+:astlig::lignin fraction content of organic matter:
+:astrec_1::C/N ratio of added organic matter:
+:astrec_2::C/P ratio of added organic matter:
+:astrec_3::C/S ratio of added organic matter:
+-site-
+:precip_1::precipitation for January cm/month
+0 precipitation for October cm/month
+1 precipitation for November cm/month
+2 precipitation for December cm/month:
+:precip_2::precipitation for February cm/month:
+:precip_3::precipitation for March cm/month:
+:precip_4::precipitation for April cm/month:
+:precip_5::precipitation for May cm/month:
+:precip_6::precipitation for June cm/month:
+:precip_7::precipitation for July cm/month:
+:precip_8::precipitation for August cm/month:
+:precip_9::precipitation for September cm/month:
+:precip_10::precipitation for October cm/month:
+:precip_11::precipitation for November cm/month:
+:precip_12::precipitation for December cm/month:
+:prcstd_1::standard deviations for January precipitation value cm/month
+0 standard deviations for October precipitation value cm/month
+1 standard deviations for November precipitation value cm/month
+2 standard deviations for December precipitation value cm/month:
+:prcstd_2::standard deviations for February precipitation value cm/month:
+:prcstd_3::standard deviations for March precipitation value cm/month:
+:prcstd_4::standard deviations for April precipitation value cm/month:
+:prcstd_5::standard deviations for May precipitation value cm/month:
+:prcstd_6::standard deviations for June precipitation value cm/month:
+:prcstd_7::standard deviations for July precipitation value cm/month:
+:prcstd_8::standard deviations for August precipitation value cm/month:
+:prcstd_9::standard deviations for September precipitation value cm/month:
+:prcstd_10::standard deviations for October precipitation value cm/month:
+:prcstd_11::standard deviations for November precipitation value cm/month:
+:prcstd_12::standard deviations for December precipitation value cm/month:
+:prcskw_1::skewness value for January precipitation
+0 skewness value for October precipitation
+1 skewness value for November precipitation
+2 skewness value for December precipitation:
+:prcskw_2::skewness value for February precipitation:
+:prcskw_3::skewness value for March precipitation:
+:prcskw_4::skewness value for April precipitation:
+:prcskw_5::skewness value for May precipitation:
+:prcskw_6::skewness value for June precipitation:
+:prcskw_7::skewness value for July precipitation:
+:prcskw_8::skewness value for August precipitation:
+:prcskw_9::skewness value for September precipitation:
+:prcskw_10::skewness value for October precipitation:
+:prcskw_11::skewness value for November precipitation:
+:prcskw_12::skewness value for December precipitation:
+:tmn2m_1::January minimum temperature at 2 meters deg C
+0 October minimum temperature at 2 meters deg C
+1 November minimum temperature at 2 meters deg C
+2 December minimum temperature at 2 meters deg C:
+:tmn2m_2::February minimum temperature at 2 meters deg C:
+:tmn2m_3::March minimum temperature at 2 meters deg C:
+:tmn2m_4::April minimum temperature at 2 meters deg C:
+:tmn2m_5::May minimum temperature at 2 meters deg C:
+:tmn2m_6::June minimum temperature at 2 meters deg C:
+:tmn2m_7::July minimum temperature at 2 meters deg C:
+:tmn2m_8::August minimum temperature at 2 meters deg C:
+:tmn2m_9::September minimum temperature at 2 meters deg C:
+:tmn2m_10::October minimum temperature at 2 meters deg C:
+:tmn2m_11::November minimum temperature at 2 meters deg C:
+:tmn2m_12::December minimum temperature at 2 meters deg C:
+:tmx2m_1::January maximum temperature at 2 meters deg C
+0 October maximum temperature at 2 meters deg C
+1 November maximum temperature at 2 meters deg C
+2 December maximum temperature at 2 meters deg C:
+:tmx2m_2::February maximum temperature at 2 meters deg C:
+:tmx2m_3::March maximum temperature at 2 meters deg C:
+:tmx2m_4::April maximum temperature at 2 meters deg C:
+:tmx2m_5::May maximum temperature at 2 meters deg C:
+:tmx2m_6::June maximum temperature at 2 meters deg C:
+:tmx2m_7::July maximum temperature at 2 meters deg C:
+:tmx2m_8::August maximum temperature at 2 meters deg C:
+:tmx2m_9::September maximum temperature at 2 meters deg C:
+:tmx2m_10::October maximum temperature at 2 meters deg C:
+:tmx2m_11::November maximum temperature at 2 meters deg C:
+:tmx2m_12::December maximum temperature at 2 meters deg C:
+:ivauto::use Burke's equations to initialize soil C pools = 0 the user has supplied the initial values = 1 initialize using the grassland soil parameters = 2 initialize using the crop soil parameters
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 g/m2
+= 0 g/m2
+= 0 g/m2
+= 0 g/m2
+= 0 or 2 gN/m2
+= 0 or 2gP/m2
+= 0 or 2gS/m2
+= 0 or 2 gC/m2
+= 0 or 2 gC/m2
+= 0 or 2 gN/m2
+= 0 or 2 gP/m2
+= 0 or 2 gS/m2
+= 0 gC/m2
+= 0 gC/m2
+= 0 gN/m2
+= 0 gP/m2
+= 0 gS/m2:
+:nelem::number of elements besides C to be simulated = 1 simulate N = 2 simulate N and P = 3 simulate N, P and S:
+:sitlat::latitude of model site deg:
+:sitlng::longitude of model site deg for reference only:
+:sand::fraction of in soil:
+:silt::fraction of in soil:
+:clay::fraction of in soil:
+:rock::fraction of in soil:
+:bulkd::bulk density of soil used to compute soil loss by erosion, wilting point, and field capacity kg/liter:
+:nlayer::number of soil layers in water model maximum of 9 used only to calculate the amount of water available for survival of the plant:
+:nlaypg::number of soil layers in the top level of the water model determines avh2o1, used for growth and root death:
+:drain::the fraction of excess water lost by age indicates whether a soil is sensitive for anaerobiosis = 0 or not = 1:
+:basef::the fraction of the soil water content of layer NLAYER+1 which is lost via base flow:
+:stormf::the fraction of flow from NLAYER to NLAYER+1 which goes into storm flow:
+:precro::the amount of monthly rainfall required in order for runoff to occur:
+:fracro::the fraction of the monthly rainfall, over PRECRO, which is lost via runoff:
+:swflag::flag indicating the source of the values for awilt and afiel, either from actual data from the <site>.100 file or from equations from Gupta and Larson 1979 or Rawls et al. 1982 = 0 use actual data from the <site>.100 file = 1 use G & L for both awilt 15 bar and afiel 0.33 bar [old way, version 3] = 2 use G & L for both awilt 15 bar and afiel 0.10 bar = 3 use Rawls for both awilt 15 bar and afiel 0.33 bar = 4 use Rawls for both awilt 15 bar and afiel 0.10 bar = 5 use Rawls for afiel 0.33 bar with actual data for awilt = 6 use Rawls for afiel 0.10 bar with actual data for awilt
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0, 5, or 6
+= 0
+= 0
+= 0
+= 0
+= 0
+= 0
+= 0
+= 0
+= 0
+= 0:
+:awilt_1::the wilting point of soil layer 1 fraction used only if swflag = 0, 5, or 6
+0 the wilting point of soil layer 10 fraction used only if swflag = 0, 5, or 6:
+:awilt_2::the wilting point of soil layer 2 fraction used only if swflag = 0, 5, or 6:
+:awilt_3::the wilting point of soil layer 3 fraction used only if swflag = 0, 5, or 6:
+:awilt_4::the wilting point of soil layer 4 fraction used only if swflag = 0, 5, or 6:
+:awilt_5::the wilting point of soil layer 5 fraction used only if swflag = 0, 5, or 6:
+:awilt_6::the wilting point of soil layer 6 fraction used only if swflag = 0, 5, or 6:
+:awilt_7::the wilting point of soil layer 7 fraction used only if swflag = 0, 5, or 6:
+:awilt_8::the wilting point of soil layer 8 fraction used only if swflag = 0, 5, or 6:
+:awilt_9::the wilting point of soil layer 9 fraction used only if swflag = 0, 5, or 6:
+:awilt_10::the wilting point of soil layer 10 fraction used only if swflag = 0, 5, or 6:
+:afiel_1::the field capacity of soil layer 1 fraction used only if swflag = 0
+0 the field capacity of soil layer 10 fraction used only if swflag = 0:
+:afiel_2::the field capacity of soil layer 2 fraction used only if swflag = 0:
+:afiel_3::the field capacity of soil layer 3 fraction used only if swflag = 0:
+:afiel_4::the field capacity of soil layer 4 fraction used only if swflag = 0:
+:afiel_5::the field capacity of soil layer 5 fraction used only if swflag = 0:
+:afiel_6::the field capacity of soil layer 6 fraction used only if swflag = 0:
+:afiel_7::the field capacity of soil layer 7 fraction used only if swflag = 0:
+:afiel_8::the field capacity of soil layer 8 fraction used only if swflag = 0:
+:afiel_9::the field capacity of soil layer 9 fraction used only if swflag = 0:
+:afiel_10::the field capacity of soil layer 10 fraction used only if swflag = 0:
+:ph::soil pH used to calculate the solubility of secondary P within the boundaries specified by esp1 and esp3
+eric N fixation wet and dry deposition g/m2/y/cm precip
+eric N fixation wet and dry deposition g/m2/yr/cm precip
+eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip
+eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
+:pslsrb::slope term which controls the fraction of mineral P that is labile:
+:sorpmx::maximum P sorption potential for a soil:
+:epnfa_1::intercept value for determining the effect of annual precipitation on atmospheric N fixation wet and dry deposition g/m2/y/cm precip:
+:epnfa_2::slope value for determining the effect of annual precipitation on atmospheric N fixation wet and dry deposition g/m2/yr/cm precip:
+:epnfs_1::minimum AET value used for determining the effect of annual evapotranspiration on nonsymbiotic soil N fixation not used if nsnfix = 1 cm:
+:epnfs_2::intercept value for determining the effect of annual evapotranspiration nonsymbiotic soil N fixation not used if nsnfix = 1 g/m2/yr/cm aet:
+:satmos_1::intercept for atmospheric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
+:satmos_2::slope for atmospheric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
+:sirri::S concentration in irrigation water mg S/l:
+:som1ci_1_1::initial value for unlabeled C in surface organic matter with fast turnover used only if ivauto = 0 gC/m2:
+:som1ci_1_2::initial value for labeled C in surface organic matter with fast turnover used only if ivauto = 0 gC/m2:
+:som1ci_2_1::initial value for unlabeled C in soil organic matter with fast turnover used only if ivauto = 0 gC/m2:
+:som1ci_2_2::initial value for labeled C in soil organic matter with fast turnover used only if ivauto = 0 gC/m2:
+:som2ci_1_1::initial value for unlabeled C in surface organic matter with intermediate turnover used only if ivauto = 0 gC/m2:
+:som2ci_1_2::initial value for labeled C in surface organic matter with intermediate turnover used only if ivauto = 0 gC/m2:
+:som2ci_2_1::initial value for unlabeled C in soil organic matter with intermediate turnover used only if ivauto = 0 gC/m2:
+:som2ci_2_2::initial value for labeled C in soil organic matter with intermediate turnover used only if ivauto = 0 gC/m2:
+:som3ci_1::initial value for unlabeled C in soil organic matter with slow turnover used only if ivauto = 0 gC/m2:
+:som3ci_2::initial value for labeled C in soil organic matter with slow turnover used only if ivauto = 0 gC/m2:
+:rces1_1_1::initial C/N ratio in surface organic matter with fast turnover active som:
+:rces1_1_2::initial C/P ratio in surface organic matter with fast turnover active som:
+:rces1_1_3::initial C/S ratio in surface organic matter with fast turnover active som:
+:rces1_2_1::initial C/N ratio in soil organic matter with fast turnover active som:
+:rces1_2_2::initial C/P ratio in soil organic matter with fast turnover active som:
+:rces1_2_3::initial C/S ratio in soil organic matter with fast turnover active som:
+:rces2_1_1::initial C/N ratio in surface organic matter with intermediate turnover slow SOM:
+:rces2_1_2::initial C/P ratio in surface organic matter with intermediate turnover slow SOM:
+:rces2_1_3::initial C/S ratio in surface organic matter with intermediate turnover slow SOM:
+:rces2_2_1::initial C/N ratio in soil organic matter with intermediate turnover slow SOM:
+:rces2_2_2::initial C/P ratio in soil organic matter with intermediate turnover slow SOM:
+:rces2_2_3::initial C/S ratio in soil organic matter with intermediate turnover slow SOM:
+:rces3_1::initial C/N ratio in soil organic matter with slow turnover passive SOM:
+:rces3_2::initial C/P ratio in soil organic matter with slow turnover passive SOM:
+:rces3_3::initial C/S ratio in soil organic matter with slow turnover passive SOM:
+:clittr_1_1::initial value for surface unlabeled plant residue used only if ivauto = 0 g/m2:
+:clittr_1_2::initial value for surface labeled plant residue used only if ivauto = 0 g/m2:
+:clittr_2_1::initial value for soil unlabeled plant residue used only if ivauto = 0 g/m2:
+:clittr_2_2::initial value for soil labeled plant residue used only if ivauto = 0 g/m2:
+:rcelit_1_1::initial C/N ratio for surface litter:
+:rcelit_1_2::initial C/P ratio for surface litter:
+:rcelit_1_3::initial C/S ratio for surface litter:
+:rcelit_2_1::initial C/N ratio for soil litter:
+:rcelit_2_2::initial C/P ratio for soil litter:
+:rcelit_2_3::initial C/S ratio for soil litter:
+:aglcis_1::initial value for aboveground live unlabeled C isotope gC/m2:
+:aglcis_2::initial value for aboveground live labeled C isotope gC/m2:
+:aglive_1::initial value for aboveground live N used only if ivauto = 0 or 2 gN/m2:
+:aglive_2::initial value for aboveground live P used only if ivauto = 0 or 2gP/m2:
+:aglive_3::initial value for aboveground live S used only if ivauto = 0 or 2gS/m2:
+:bglcis_1::initial value for belowground live unlabeled C used only if ivauto = 0 or 2 gC/m2:
+:bglcis_2::initial value for belowground live labeled C used only if ivauto = 0 or 2 gC/m2:
+:bglive_1::initial value for belowground live N used only if ivauto = 0 or 2 gN/m2:
+:bglive_2::initial value for belowground live P used only if ivauto = 0 or 2 gP/m2:
+:bglive_3::initial value for belowground live S used only if ivauto = 0 or 2 gS/m2:
+:stdcis_1::initial value for standing dead unlabeled C used only if ivauto = 0 gC/m2:
+:stdcis_2::initial value for standing dead labeled C used only if ivauto = 0 gC/m2:
+:stdede_1::initial value for N in standing dead used only if ivauto = 0 gN/m2:
+:stdede_2::initial value for P in standing dead used only if ivauto = 0 gP/m2:
+:stdede_3::initial value for S in standing dead used only if ivauto = 0 gS/m2:
+:rlvcis_1::initial value for unlabeled C in forest system leaf component gC/m2:
+:rlvcis_2::initial value for labeled C in forest system leaf component gC/m2:
+:rleave_1::initial value for N in a forest system leaf component gN/m2:
+:rleave_2::initial value for P in a forest system leaf component gP/m2:
+:rleave_3::initial value for S in a forest system leaf component gS/m2:
+:fbrcis_1::initial value for unlabeled C in forest system fine branch component gC/m2:
+:fbrcis_2::initial value for labeled C in forest system fine branch component gC/m2:
+:fbrche_1::initial value for N in a forest system fine branch component gN/m2:
+:fbrche_2::initial value for P in a forest system fine branch component gP/m2:
+:fbrche_3::initial value for S in a forest system fine branch component gS/m2:
+:rlwcis_1::initial value for unlabeled C in forest system large wood component gC/m2:
+:rlwcis_2::initial value for labeled C in forest system large wood component gC/m2:
+:rlwode_1::initial value for N in a forest system large wood component gN/m2:
+:rlwode_2::initial value for P in a forest system large wood component gP/m2:
+:rlwode_3::initial value for S in a forest system large wood component gS/m2:
+:frtcis_1::initial value for unlabeled C in forest system fine root component gC/m2:
+:frtcis_2::initial value for labeled C in forest system fine root component gC/m2:
+:froote_1::initial value for N in a forest system fine root component gN/m2:
+:froote_2::initial value for P in a forest system fine root component gP/m2:
+:froote_3::initial value for S in a forest system fine root component gS/m2:
+:crtcis_1::initial value for unlabeled C in forest system coarse root component gC/m2:
+:crtcis_2::initial value for labeled C in forest system coarse root component gC/m2:
+:croote_1::initial value for N in a forest system coarse root component gN/m2:
+:croote_2::initial value for P in a forest system coarse root component gP/m2:
+:croote_3::initial value for S in a forest system coarse root component gS/m2:
+:wd1cis_1::initial unlabeled C values for forest system dead fine branch material wood1 g/m2:
+:wd1cis_2::initial labeled C values for forest system dead fine branch material wood1 g/m2:
+:wd2cis_1::initial unlabeled C values for forest system dead large wood material wood2 g/m2:
+:wd2cis_2::initial labeled C values for forest system dead large wood material wood2 g/m2:
+:wd3cis_1::initial unlabeled C values for forest system dead coarse root material wood3 g/m2:
+:wd3cis_2::initial labeled C values for forest system dead coarse root material wood3 g/m2:
+:minerl_1_1::initial value for mineral N for layer 1 gN/m2:
+:minerl_2_1::initial value for mineral N for layer 2 gN/m2:
+:minerl_3_1::initial value for mineral N for layer 3 gN/m2:
+:minerl_4_1::initial value for mineral N for layer 4 gN/m2:
+:minerl_5_1::initial value for mineral N for layer 5 gN/m2:
+:minerl_6_1::initial value for mineral N for layer 6 gN/m2:
+:minerl_7_1::initial value for mineral N for layer 7 gN/m2:
+:minerl_8_1::initial value for mineral N for layer 8 gN/m2:
+:minerl_9_1::initial value for mineral N for layer 9 gN/m2:
+:minerl_10_1::initial value for mineral N for layer 10 gN/m2:
+:minerl_1_2::initial value for mineral P for layer 1 gP/m2:
+:minerl_2_2::initial value for mineral P for layer 2 gP/m2:
+:minerl_3_2::initial value for mineral P for layer 3 gP/m2:
+:minerl_4_2::initial value for mineral P for layer 4 gP/m2:
+:minerl_5_2::initial value for mineral P for layer 5 gP/m2:
+:minerl_6_2::initial value for mineral P for layer 6 gP/m2:
+:minerl_7_2::initial value for mineral P for layer 7 gP/m2:
+:minerl_8_2::initial value for mineral P for layer 8 gP/m2:
+:minerl_9_2::initial value for mineral P for layer 9 gP/m2:
+:minerl_10_2::initial value for mineral P for layer 10 gP/m2:
+:minerl_1_3::initial value for mineral S for layer 1 gS/m2:
+:minerl_2_3::initial value for mineral S for layer 2 gS/m2:
+:minerl_3_3::initial value for mineral S for layer 3 gS/m2:
+:minerl_4_3::initial value for mineral S for layer 4 gS/m2:
+:minerl_5_3::initial value for mineral S for layer 5 gS/m2:
+:minerl_6_3::initial value for mineral S for layer 6 gS/m2:
+:minerl_7_3::initial value for mineral S for layer 7 gS/m2:
+:minerl_8_3::initial value for mineral S for layer 8 gS/m2:
+:minerl_9_3::initial value for mineral S for layer 9 gS/m2:
+:minerl_10_3::initial value for mineral S for layer 10 gS/m2:
+:parent_1::initial N value for parent material gN/m2:
+:parent_2::initial P value for parent material gP/m2:
+:parent_3::initial S value for parent material gS/m2:
+:secndy_1::initial N value for secondary N gN/m2:
+:secndy_2::initial P value for secondary P gP/m2:
+:secndy_3::initial S value for secondary S gS/m2:
+:occlud::initial value for ed P gP/m2:
+:rwcf_1::initial relative water content for layer 1
+0 initial relative water content for layer 10:
+:rwcf_2::initial relative water content for layer 2:
+:rwcf_3::initial relative water content for layer 3:
+:rwcf_4::initial relative water content for layer 4:
+:rwcf_5::initial relative water content for layer 5:
+:rwcf_6::initial relative water content for layer 6:
+:rwcf_7::initial relative water content for layer 7:
+:rwcf_8::initial relative water content for layer 8:
+:rwcf_9::initial relative water content for layer 9:
+:rwcf_10::initial relative water content for layer 10:
+:snlq::liquid water in the snow pack cm of H2O:
+:snow::pack cm of H2O
+pack water content cm of H2O:
+-tree-
+:decid::type of forest = 0 if forest is continuous = 1 if forest is temperatureuous = 2 if forest is droughtuous
+uous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate uous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate uous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved
+uous the fraction of leaves which fall during senescence month or at the end of the growing season, used when = 1 or 2
+uous tree type, degrees C
+uous tree type, degrees C:
+:prdx_2::coefficient for calculating potential monthly forest production as a function of solar radiation outside the atmosphere:
+:ppdf_1::optimum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_2::maximum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_3::left curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:ppdf_4::right curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
+:cerfor_1_1_1::minimum C/N ratio for leaves:
+:cerfor_1_1_2::minimum C/P ratio for leaves:
+:cerfor_1_1_3::minimum C/S ratio for leaves:
+:cerfor_1_2_1::minimum C/N ratio for fine roots:
+:cerfor_1_2_2::minimum C/P ratio for fine roots:
+:cerfor_1_2_3::minimum C/S ratio for fine roots:
+:cerfor_1_3_1::minimum C/N ratio for fine branches:
+:cerfor_1_3_2::minimum C/P ratio for fine branches:
+:cerfor_1_3_3::minimum C/S ratio for fine branches:
+:cerfor_1_4_1::minimum C/N ratio for large wood:
+:cerfor_1_4_2::minimum C/P ratio for large wood:
+:cerfor_1_4_3::minimum C/S ratio for large wood:
+:cerfor_1_5_1::minimum C/N ratio for coarse roots:
+:cerfor_1_5_2::minimum C/P ratio for coarse roots:
+:cerfor_1_5_3::minimum C/S ratio for coarse roots:
+:cerfor_2_1_1::maximum C/N ratio for leaves:
+:cerfor_2_1_2::maximum C/P ratio for leaves:
+:cerfor_2_1_3::maximum C/S ratio for leaves:
+:cerfor_2_2_1::maximum C/N ratio for fine roots:
+:cerfor_2_2_2::maximum C/P ratio for fine roots:
+:cerfor_2_2_3::maximum C/S ratio for fine roots:
+:cerfor_2_3_1::maximum C/N ratio for fine branches:
+:cerfor_2_3_2::maximum C/P ratio for fine branches:
+:cerfor_2_3_3::maximum C/S ratio for fine branches:
+:cerfor_2_4_1::maximum C/N ratio for large wood:
+:cerfor_2_4_2::maximum C/P ratio for large wood:
+:cerfor_2_4_3::maximum C/S ratio for large wood:
+:cerfor_2_5_1::maximum C/N ratio for coarse roots:
+:cerfor_2_5_2::maximum C/P ratio for coarse roots:
+:cerfor_2_5_3::maximum C/S ratio for coarse roots:
+:cerfor_3_1_1::initial C/N ratio for leaves:
+:cerfor_3_1_2::initial C/P ratio for leaves:
+:cerfor_3_1_3::initial C/S ratio for leaves:
+:cerfor_3_2_1::initial C/N ratio for fine roots:
+:cerfor_3_2_2::initial C/P ratio for fine roots:
+:cerfor_3_2_3::initial C/S ratio for fine roots:
+:cerfor_3_3_1::initial C/N ratio for fine branches:
+:cerfor_3_3_2::initial C/P ratio for fine branches:
+:cerfor_3_3_3::initial C/S ratio for fine branches:
+:cerfor_3_4_1::initial C/N ratio for large wood:
+:cerfor_3_4_2::initial C/P ratio for large wood:
+:cerfor_3_4_3::initial C/S ratio for large wood:
+:cerfor_3_5_1::initial C/N ratio for coarse roots:
+:cerfor_3_5_2::initial C/P ratio for coarse roots:
+:cerfor_3_5_3::initial C/S ratio for coarse roots:
+:decw1::maximum decomposition rate constant for wood1 dead fine branch per year before temperature and moisture effects applied:
+:decw2::maximum decomposition rate constant for wood2 dead large wood per year before temperature and moisture effects applied:
+:decw3::maximum decomposition rate constant for wood3 dead coarse root per year before temperature and moisture effects applied:
+:fcfrac_1_1::C allocation fraction of new production of leaves for juvenile forest time < swold:
+:fcfrac_2_1::C allocation fraction of new production of fine roots for juvenile forest time < swold:
+:fcfrac_3_1::C allocation fraction of new production of fine branches for juvenile forest time < swold:
+:fcfrac_4_1::C allocation fraction of new production of large wood for juvenile forest time < swold:
+:fcfrac_5_1::C allocation fraction of new production of coarse roots for juvenile forest time < swold:
+:fcfrac_1_2::C allocation fraction of new production of leaves for mature forest time >= swold:
+:fcfrac_2_2::C allocation fraction of new production of fine roots for mature forest time >= swold:
+:fcfrac_3_2::C allocation fraction of new production of fine branches for mature forest time >= swold:
+:fcfrac_4_2::C allocation fraction of new production of large wood for mature forest time >= swold:
+:fcfrac_5_2::C allocation fraction of new production of coarse roots for mature forest time >= swold:
+:tfrtcn_1::maximum fraction of C allocated to fine roots under maximum water stress:
+:tfrtcn_2::minimum fraction of C allocated to fine roots with no water stress:
+:tfrtcw_1::maximum fraction of C allocated to fine roots under maximum nutrient stress:
+:tfrtcw_2::minimum fraction of C allocated to fine roots with no nutrient stress:
+:leafdr_1::monthly death rate fraction for leaves
+0 monthly death rate fraction for leaves
+1 monthly death rate fraction for leaves
+2 monthly death rate fraction for leaves:
+:leafdr_2::monthly death rate fraction for leaves:
+:leafdr_3::monthly death rate fraction for leaves:
+:leafdr_4::monthly death rate fraction for leaves:
+:leafdr_5::monthly death rate fraction for leaves:
+:leafdr_6::monthly death rate fraction for leaves:
+:leafdr_7::monthly death rate fraction for leaves:
+:leafdr_8::monthly death rate fraction for leaves:
+:leafdr_9::monthly death rate fraction for leaves:
+:leafdr_10::monthly death rate fraction for leaves:
+:leafdr_11::monthly death rate fraction for leaves:
+:leafdr_12::monthly death rate fraction for leaves:
+:btolai::biomass to leaf area index LAI conversion factor for trees some suggested values arctic tundra 0.008 arid savanna/shrubland 0.007 boreal forest 0.004 coniferous/deciduous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate deciduous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate deciduous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved:
+:klai::large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved:
+:laitop::parameter determining relationship between LAI and forest production LAI effect = 1 exp * LAI:
+:maxlai::is achieved
+theoretical maximum leaf area index achieved in mature forest:
+:maxldr::multiplier for effect of N availability on leaf death rates continously growing forest systems only a ratio between death rate at unlimited vs. severly limited N status:
+:forrtf_1::fraction of N retranslocated from green forest leaves at death:
+:forrtf_2::fraction of P retranslocated from green forest leaves at death:
+:forrtf_3::fraction of S retranslocated from green forest leaves at death:
+:sapk::parameter controlling ratio of sapwood to total stem wood, expressed as gC/m2 it is equal to both the large wood mass rlwodc at which half of large wood is sapwood, and the theoretical maximum sapwood mass achieved in mature forest:
+:swold::year at which to switch from juvenile to mature forest C allocation fractions for production:
+:wdlig_1::lignin fraction for forest system leaf component:
+:wdlig_2::lignin fraction for forest system juvenile fine root component:
+:wdlig_3::lignin fraction for forest system fine branch component:
+:wdlig_4::lignin fraction for forest system large wood component:
+:wdlig_5::lignin fraction for forest system coarse root component:
+:wdlig_6::lignin fraction for forest system mature fine root component:
+:wooddr_1::fraction of forest which is deciduous the fraction of leaves which fall during senescence month or at the end of the growing season, used when decid = 1 or 2:
+:wooddr_2::monthly death rate fraction for juvenile fine root component:
+:wooddr_3::monthly death rate fraction for fine branch component:
+:wooddr_4::monthly death rate fraction for large wood component:
+:wooddr_5::monthly death rate fraction for coarse root component:
+:wooddr_6::monthly death rate fraction for mature fine root component:
+:wrdsrfc::fraction of the fine roots that are transferred into the surface litter layer SRTUCC1 and METABC1 upon fine root death, the remainder of the roots will go to the soil litter layer STRUCC2 and METABC2:
+:wmrtfrac::fraction of fine root production that goes to mature roots:
+:snfxmx_2::symbiotic N fixation maximum for forest g N fixed/g C new growth:
+:del13c::delta 13C value for stable isotope labeling:
+:co2ipr_2::in a forest system, the effect on plant production ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2itr_2::in a forest system, the effect on transpiration rate ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_1_1::in a forest system, the effect on minimum C/N ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_1_2::in a forest system, the effect on minimum C/P ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_1_3::in a forest system, the effect on minimum C/S ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_2_1::in a forest system, the effect on maximum C/N ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_2_2::in a forest system, the effect on maximum C/P ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2ice_2_2_3::in a forest system, the effect on maximum C/S ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:co2irs_2::in a forest system, the effect on rootshoot ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
+:basfc2::savanna only relates tree basal area to grass N fraction higher value gives more N to trees if not running savanna, set to 1.0:
+:basfct::savanna only ratio between basal area and wood biomass cm2/g it is equal to form factor * wood density * tree height if not running savanna, set to 1.0:
+:sitpot::multiplier for equation to dynamically compute measure of the aboveground herbaceous layer production in kg ha1 yr1 in the absence of trees:
+:maxnp::maximum N/P ratio for leaves, used only when nelem >= 2:
+:kmrsp_2::the fraction of net primary production that goes to the maintenance respiration storage pool for trees:
+:fkmrspmx_1::maximum fraction of live leaf C that goes to maintenance respiration for trees:
+:fkmrspmx_2::maximum fraction of juvenile live fine root C that goes to maintenance respiration for trees:
+:fkmrspmx_3::maximum fraction of live fine branch C that goes to maintenance respiration for trees:
+:fkmrspmx_4::maximum fraction of live large wood C that goes to maintenance respiration for trees:
+:fkmrspmx_5::maximum fraction of live coarse root C that goes to maintenance respiration for trees:
+:fkmrspmx_6::maximum fraction of mature live fine root C that goes to maintenance respiration for trees:
+:fgresp_1::maximum fraction of live leaf C that goes to growth respiration for trees:
+:fgresp_2::maximum fraction of juvenile live fine root C that goes to respiration for trees:
+:fgresp_3::maximum fraction of live fine branch C that goes to growth respiration for trees:
+:fgresp_4::maximum fraction of live large wood C that goes to growth respiration for trees:
+:fgresp_5::maximum fraction of live coarse root C that goes to growth respiration for trees:
+:fgresp_6::maximum fraction of mature live fine root C that goes to growth respiration for trees:
+:no3pref_2::fraction of N update that is NO3:
+:tlaypg::number of soil layers used to determine water and mineral N, P, and S that are available for tree growth:
+:tmix::rate of mixing of surface SOM2C and soil SOM2C for forest system:
+:tmplff::temperature at which leaf drop will occur for a deciduous tree type, degrees C:
+:tmplfs::temperature at which leaf out will occur for a deciduous tree type, degrees C:
+:wdgrwm::number of months after growth starts that the woody growth stops and the carbon and nutrients that would have been allocated for woody component fine branch, large wood, and coarse root tree growth is instead stored in the carbohydrate CARBOSTG2,1 and CARBOSTG2,2 and nutrient FORSTG3 storage pools:
+:tmxturn::maximum turnover rate per month of juvenile fine roots to mature fine roots through aging:
+-trem-
+:evntyp::event type flag = 0 for cutting event = 1 for fire event = 2 leaves are removed from system:
+:remf_1::fraction of leaf live component removed:
+:remf_2::fraction of fine branch live component removed:
+:remf_3::fraction of large wood live component removed:
+:remf_4::fraction of fine branch dead component removed:
+:remf_5::fraction of large wood dead component removed:
+:fd_1::fraction of fine root component that dies:
+:fd_2::fraction of coarse root component that dies:
+:retf_1_1::fraction of C in killed live leaves that is returned to the system ash or litter:
+:retf_1_2::fraction of N in killed live leaves that is returned to the system ash or litter:
+:retf_1_3::fraction of P in killed live leaves that is returned to the system ash or litter:
+:retf_1_4::fraction of S in killed live leaves that is returned to the system ash or litter:
+:retf_2_1::fraction of C in killed fine branches that is returned to the system ash or dead fine branches:
+:retf_2_2::fraction of N in killed fine branches that is returned to the system ash or dead fine branches:
+:retf_2_3::fraction of P in killed fine branches that is returned to the system ash or dead fine branches:
+:retf_2_4::fraction of S in killed fine branches that is returned to the system ash or dead fine branches:
+:retf_3_1::fraction of C in killed large wood that is returned to the system ash or dead large wood:
+:retf_3_2::fraction of N in killed large wood that is returned to the system ash or dead large wood:
+:retf_3_3::fraction of P in killed large wood that is returned to the system ash or dead large wood:
+:retf_3_4::fraction of S in killed large wood that is returned to the system ash or dead large wood:
