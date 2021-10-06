@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm delineated
+rm data100.delineated
 rm *.txt
 
 txt() {
@@ -42,8 +42,8 @@ done
 for file in *-description.txt; do
     echo "catting $file"
     fileName=${file//-description.txt/}
-    echo "-$fileName-" >> delineated
-    cat $file >> delineated
+    echo "-$fileName-" >> data100.delineated
+    cat $file >> data100.delineated
 done
 
 rm *.txt

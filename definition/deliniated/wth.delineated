@@ -1,0 +1,52 @@
+-driver0-
+:dom::day of month 1-31:
+:moy::month of year 1-12:
+:year::year 4 digits;
+:day::day of the year 1-366:
+:maxTemp::maximum temperature for day in celcius:
+:minTemp::minimum temperature for day in celcius:
+:precip::precipitation for day cm:
+-driver1-
+:dom::day of month 1-31:
+:moy::month of year 1-12:
+:year::year 4 digits;
+:day::day of the year 1-366:
+:maxTemp::maximum temperature for day in celcius:
+:minTemp::minimum temperature for day in celcius:
+:precip::precipitation for day cm:
+:solrad::solar radiation langleys day-1:
+:relhum::relative humidity 1-100:
+:windspeed::wind speed in miles per hour
+-driver2-
+:dom::day of month 1-31:
+:moy::month of year 1-12:
+:year::year 4 digits;
+:day::day of the year 1-366:
+:maxTemp::maximum temperature for day in celcius:
+:minTemp::minimum temperature for day in celcius:
+:precip::precipitation for day cm:
+:solradflux::mean daytime solar radiation flux, w m-2:
+:predef::vapor pressure deficit kpa day-1:
+-driver3-
+:dom::day of month 1-31:
+:moy::month of year 1-12:
+:year::year 4 digits;
+:day::day of the year 1-366:
+:maxTemp::maximum temperature for day in celcius:
+:minTemp::minimum temperature for day in celcius:
+:precip::precipitation for day cm:
+:solrad::solar radiation langleys day-1:
+:relhum::relative humidity 1-100:
+:windspeed::wind speed in miles per hour
+:solradflux::mean daytime solar radiation flux, w m-2:
+:predef::vapor pressure deficit kpa:
+-driver4-
+:dom::day of month 1-31:
+:moy::month of year 1-12:
+:year::year 4 digits;
+:day::day of the year 1-366:
+:maxTemp::maximum temperature for day in celcius:
+:minTemp::minimum temperature for day in celcius:
+:precip::precipitation for day cm:
+:avgsolrad::solar radiation mean w m-2 day-1
+:evi:enhanced vegetation index derived from modis

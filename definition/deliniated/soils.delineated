@@ -1,0 +1,14 @@
+-soils-
+:udsl::upper depth of soil layer cm:
+:ldsl::lower depth of soil layer cm:
+:bdsl::bulk density of soil layer -g cm-3: 
+:fcsl::field capacity of soil layer volumetric fraction:
+:wpsl::wilting point of soil layer volumetric fraction:
+:ecsl::evaporation coefficient for soil layer -currently not being used:
+:frsl::fraction of roots in soil layer these values must sum to 1.0 but if they do not the model will normalize the values to 1.0:
+:fssl::fraction of sand in soil layer 0.0 - 1.0:
+:fcsl::fraction of clay in soil layer 0.0 - 1.0:
+:omsl::organic matter in soil layer fraction 0.0 - 1.0:
+:wcsl::the amount that volumetric soil water content can drop below wilting point for soil layer -deltamin, volumetric fraction the minimum soil water content of a layer = wilting point – deltamin:
+:hcsl::saturated hydraulic conductivity of soil layer -ksat, cm sec-1:
+:phsl::ph of soil layer:

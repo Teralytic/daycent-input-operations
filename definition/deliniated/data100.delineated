@@ -380,6 +380,19 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :varat3_3_3::amount S present when minimum ratio applies:
 :vlosse::fraction per year of excess N i.e. N left in the soil after nutrient uptake by the plant which is volatilized:
 :vlossg::multiplier for equation to compute volatilization loss that occurs as a function of gross mineralization:
+:xefcltef::Duration of Cultivation Effect:
+:maxcltef::maximum cultivation effect:
+:fldn2d::FLooDed N2/N2O ratio Days 7:
+:fln2or::N2/N2O ratio for flooded state:
+:co2ch4::fraction of CO2 from soil respiration used to produce CH4:
+:mxch4f::MaXimum Fraction of CH4 production emitted by plants.:
+:frexud::FRaction EXUDates root production fraction released as exudate:
+:aeh::differential coefficient Aeh:
+:deh::differential coefficient Deh:
+:behfl::lowerlimit value for Eh during flooding course:
+:behdr::upperlimit value of Eh during drainage course:
+:methzr::fraction CH4 emitted via bubbles when zero root biomass:
+:mrtblm::Root biomass that when exceeded starts to reduce CH4 bubble formation crops:
 -graz-
 :flgrem::fraction of live shoots removed by a grazing event:
 :fdgrem::fraction of standing dead removed by a grazing event:
@@ -489,6 +502,22 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :tmx2m_10::October maximum temperature at 2 meters deg C:
 :tmx2m_11::November maximum temperature at 2 meters deg C:
 :tmx2m_12::December maximum temperature at 2 meters deg C:
+:sradj_1::Solar radiation adjustment for cloud cover & transmission coefficient for January
+0 Solar radiation adjustment for cloud cover & transmission coefficient for October
+1 Solar radiation adjustment for cloud cover & transmission coefficient for November
+2 Solar radiation adjustment for cloud cover & transmission coefficient for December:
+:sradj_2::Solar radiation adjustment for cloud cover & transmission coefficient for February:
+:sradj_3::Solar radiation adjustment for cloud cover & transmission coefficient for March:
+:sradj_4::Solar radiation adjustment for cloud cover & transmission coefficient for April:
+:sradj_5::Solar radiation adjustment for cloud cover & transmission coefficient for May:
+:sradj_6::Solar radiation adjustment for cloud cover & transmission coefficient for June:
+:sradj_7::Solar radiation adjustment for cloud cover & transmission coefficient for July:
+:sradj_8::Solar radiation adjustment for cloud cover & transmission coefficient for August:
+:sradj_9::Solar radiation adjustment for cloud cover & transmission coefficient for September:
+:sradj_10::Solar radiation adjustment for cloud cover & transmission coefficient for October:
+:sradj_11::Solar radiation adjustment for cloud cover & transmission coefficient for November:
+:sradj_12::Solar radiation adjustment for cloud cover & transmission coefficient for December:
+:rainhr::Duration of each rain event:
 :ivauto::use Burke's equations to initialize soil C pools = 0 the user has supplied the initial values = 1 initialize using the grassland soil parameters = 2 initialize using the crop soil parameters
 = 0 gC/m2
 = 0 gC/m2
@@ -520,6 +549,11 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :nelem::number of elements besides C to be simulated = 1 simulate N = 2 simulate N and P = 3 simulate N, P and S:
 :sitlat::latitude of model site deg:
 :sitlng::longitude of model site deg for reference only:
+:elev::ation:
+:sitslp::site slope:
+:aspect::site:
+:ehoriz::site east horizon:
+:whoriz::site west horizon:
 :sand::fraction of in soil:
 :silt::fraction of in soil:
 :clay::fraction of in soil:
@@ -582,6 +616,25 @@ eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip
 eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
 :pslsrb::slope term which controls the fraction of mineral P that is labile:
 :sorpmx::maximum P sorption potential for a soil:
+:sublim::Multiplier on ation:
+:reflec::vegetation tivity/albedo:
+:albedo::snow:
+:dmpflx::Dampens strong fluxes of water between soil layers:
+:hpotd::hydraulic water potential of deep storage layer:
+:ksatd::saturated hydraulic conductivity of deep storage layer \:
+:tbmin::minimum temperature for bottom soil layer:
+:tbmax::maximum temperature for bottom soil layer:
+:dmpfct::damping factor for calculating soil temperature by layer:
+:timlag::days from Jan 1 to coolest temp at bottom of soil days:
+:ncoeff::minimum water/temperature limitation coefficient for nitrify:
+:dnstrt::turn off respiration restraint on denitrification starting on this day days:
+:dnend::turn off respiration restraint on denitrification ends on this day:
+:nadjfc::maximum proportion of nitrified N lost as N2O @ field capacity:
+:nadjwp::minimum proportion of nitrified N lost as N2O @ wilting point:
+:maxnit::maximum daily nitrification amount:
+:mino3::fraction of new net mineralization that goes to NO3 0.0 1.0:
+:wfpsnip::adjustment on inflection point for the water filled pore space effect on denitrification curve:
+:n2n2oa::N2/N2O ratio adjustment factor for computing the N2/N2O ratio during nonflooded conditions. Values > 1.0 increase this ratio, values 0.01.0 decrease this ratio. For flooded conditions see FLN2OR in fix.100.:
 :epnfa_1::intercept value for determining the effect of annual precipitation on atmospheric N fixation wet and dry deposition g/m2/y/cm precip:
 :epnfa_2::slope value for determining the effect of annual precipitation on atmospheric N fixation wet and dry deposition g/m2/yr/cm precip:
 :epnfs_1::minimum AET value used for determining the effect of annual evapotranspiration on nonsymbiotic soil N fixation not used if nsnfix = 1 cm:
@@ -719,8 +772,11 @@ eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
 :rwcf_9::initial relative water content for layer 9:
 :rwcf_10::initial relative water content for layer 10:
 :snlq::liquid water in the snow pack cm of H2O:
-:snow::pack cm of H2O
-pack water content cm of H2O:
+:snow::albedo
+pack cm of H2O
+pack water content cm of H2O
+effect on soil surface temp 0 = not insulating, 1 = insulating:
+:snwins::snow effect on soil surface temp 0 = not insulating, 1 = insulating:
 -tree-
 :decid::type of forest = 0 if forest is continuous = 1 if forest is temperatureuous = 2 if forest is droughtuous
 uous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate uous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate uous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved
