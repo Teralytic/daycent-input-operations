@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# build .100 data structs
+
 rm data100.go
 rm data100
 
@@ -17,7 +19,7 @@ type $header struct {" >> data100.go
 
     elif [ "$trim" != "" ]
     then
-        echo "    $uppercaseTrim C.int \`json:\"$trim\"\`" >> data100.go
+        echo "$uppercaseTrim C.int \`json:\"$trim\"\`" >> data100.go
     fi
 done < data100.delineated
 
@@ -25,15 +27,19 @@ done < data100.delineated
 sed -i '1d' data100.go
 echo "}" >> data100.go
     echo "
-type data100 struct {" >> data100.go
+type Data100 struct {" >> data100-head.go
 
 while read line; do
-    uppercaseLine=$(echo "$line" | sed -E 's/.*/\u&/')
-    echo "  $line $uppercaseLine" >> data100.go
+    lowercaseLine=$(echo "$line" | tr [A-Z] [a-z])
+    echo "  $line $line \`json:\"$lowercaseLine\"\`" >> data100-head.go
 done < data100
-echo "}" >> data100.go
+echo "}" >> data100-head.go
+
+cat data100-head.go data100.go > data.go
 
 rm data100
+rm data100-head.go
+rm data100.go
 
-echo "done with .100 files"
+echo "done with .100 file"
 
