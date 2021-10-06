@@ -837,3 +837,45 @@ vlosse          fraction per year of excess N (i.e. N left in the soil after
 vlossg          multiplier for equation to compute volatilization loss that
                 occurs as a function of gross mineralization
             Range: ? to ?
+
+*** fix.100 cultivation effects (optional)
+xefcltef        Duration of Cultivation Effect
+            Range:
+
+maxcltef        maximum cultivation effect
+            Range:
+
+*** fix.100 methane parameters (optional)
+
+fldn2d          FLooDed N2/N2O ratio Days (7)
+            Range:
+
+fln2or          N2/N2O ratio for flooded state
+            Range:
+
+co2ch4          fraction of CO2 from soil respiration used to produce CH4
+            Range:
+
+mxch4f          MaXimum Fraction of CH4 production emitted by plants.
+            Range:
+
+frexud          FRaction EXUDates; root production fraction released as exudate
+            Range:
+
+aeh             differential coefficient (Aeh) 
+            Range:
+
+deh           differential coefficient (Deh) 
+            Range:
+
+behfl          lower-limit value for Eh during flooding course 
+            Range:
+
+behdr           upper-limit value of Eh during drainage course 
+            Range:
+
+methzr          fraction CH4 emitted via bubbles when zero root biomass 
+            Range:
+
+mrtblm           Root biomass that when exceeded starts to reduce CH4 bubble formation (crops)
+            Range:

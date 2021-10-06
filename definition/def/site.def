@@ -192,6 +192,59 @@ tmx2m(11)       November maximum temperature at 2 meters (deg C)
 tmx2m(12)       December maximum temperature at 2 meters (deg C)
             Range: ? to ?
 
+*** sitepar.in additional inputs
+sradj(1)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for January
+            Range:
+
+sradj(2)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for February
+            Range:
+
+sradj(3)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for March
+            Range:
+
+sradj(4)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for April
+            Range:
+
+sradj(5)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for May
+            Range:
+
+sradj(6)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for June
+            Range:
+
+sradj(7)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for July
+            Range:
+
+
+sradj(8)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for August
+            Range:
+
+sradj(9)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for September
+            Range:
+
+sradj(10)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for October
+            Range:
+
+sradj(11)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for November
+            Range:
+
+sradj(12)        Solar radiation adjustment for cloud cover & transmission 
+                coefficient for December
+            Range:
+
+rainhr          Duration of each rain event
+            Range:
+
 *** Site and control parameters
 ivauto          use Burke's equations to initialize soil C pools
                   = 0 the user has supplied the initial values
@@ -210,6 +263,22 @@ sitlat          latitude of model site (deg)
 
 sitlng          longitude of model site (deg) (for reference only)
             Range: -180.0 to 180.0
+
+*** sitepar.in additional inputs
+elev            elevation
+            Range:
+
+sitslp          site slope
+            Range:
+
+aspect          site aspect
+            Range:
+
+ehoriz          site east horizon
+            Range:
+
+whoriz          site west horizon
+            Range:
 
 sand            fraction of sand in soil
             Range: 0.0 to 1.0
@@ -365,6 +434,74 @@ pslsrb          slope term which controls the fraction of mineral P
 
 sorpmx          maximum P sorption potential for a soil
             Range: 100.0 to 100.0
+
+*** sitepar.in additional values
+sublim          Multiplier on sublimation
+            Range:
+
+reflec          vegetation reflectivity/albedo
+            Range:
+
+albedo          snow albedo
+            Range:
+
+dmpflx         Dampens strong fluxes of water between soil layers 
+            Range:
+
+hpotd          hydraulic water potential of deep storage layer
+            Range:
+
+ksatd           saturated hydraulic conductivity of deep storage layer \
+            Range:
+
+tbmin           minimum temperature for bottom soil layer
+            Range:
+
+tbmax           maximum temperature for bottom soil layer
+            Range:
+
+dmpfct          damping factor for calculating soil temperature by layer
+            Range:
+
+timlag          days from Jan 1 to coolest temp at bottom of soil (days)
+            Range:
+    
+ncoeff          minimum water/temperature limitation coefficient for 
+                nitrify
+            Range:
+
+dnstrt          turn off respiration restraint on denitrification starting on 
+                this day days
+            Range:
+
+dnend           turn off respiration restraint on denitrification ends on this 
+                day
+            Range:
+
+nadjfc          maximum proportion of nitrified N lost as N2O @ field 
+                capacity
+            Range:
+
+nadjwp         minimum proportion of nitrified N lost as N2O @ wilting 
+                point
+            Range:
+
+maxnit             maximum daily nitrification amount
+            Range:
+
+mino3          fraction of new net mineralization that goes to NO3 (0.0-
+                1.0)  
+            Range:
+
+wfpsnip         adjustment on inflection point for the water filled pore 
+                space effect on denitrification curve
+            Range:
+
+n2n2oa          N2/N2O ratio adjustment factor for computing the N2/N2O 
+                ratio during non-flooded conditions. Values > 1.0 increase 
+                this ratio, values (0.0-1.0) decrease this ratio. For flooded 
+                conditions see FLN2OR in fix.100.
+            Range:
 
 *** External nutrient input parameters
 epnfa(1)        intercept value for determining the effect of annual
@@ -863,3 +1000,8 @@ snlq            liquid water in the snow pack (cm of H2O)
 
 snow            snow pack water content (cm of H2O)
             Range: 0.0 to 9999.0
+
+*** sitepar.in additional inputs
+snwins          snow effect on soil surface temp  
+                0 = not insulating, 1 = insulating
+            Range:
