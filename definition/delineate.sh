@@ -13,7 +13,9 @@ txt() {
 
     format=$(echo "$line" | sed -E 's/,/_/g' | sed -E 's/-/_/g')
 
-    echo ":$format::$desc:" >> $name-description.txt
+    oneLinerDesc=$(echo $desc | tr -d '\n')
+
+    echo ":$format::$oneLinerDesc:" >> $name-description.txt
 }
 
 for file in *.def; do

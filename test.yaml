@@ -1,0 +1,40 @@
+DaycentInputs:
+  type: object
+  properties:
+    simulation:
+      type: object
+      properties:
+        data100:
+          type: object
+          properties:
+            site:
+              type: object
+              properties:
+                prdx_1:
+                  description: ""
+                  type: integer
+        soils:
+          type: array
+          items:
+            type: object
+            properties:
+              udsl:
+                description: ""
+                type: integer
+        weather:
+          type: object
+          properties:
+            usexdrvrs:
+              description: ""
+              type: integer
+            weatherData:
+              type: array
+              items:
+                type: object
+                properties:
+                  dom:
+                    description: ""
+                    type: integer
+                  moy:
+                    description: ""
+                    type: integer

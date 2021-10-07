@@ -4,27 +4,14 @@
 :ppdf_2::maximum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
 :ppdf_3::left curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
 :ppdf_4::right curve shape for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
-:bioflg::flag indicating whether production should be reduced by physical obstruction = 0 production should not be reduced = 1 production should be reduced
-= 1 gC/m2:
+:bioflg::flag indicating whether production should be reduced by physical obstruction = 0 production should not be reduced = 1 production should be reduced = 1 gC/m2:
 :biok5::level of aboveground standing dead + 10% strucc1 C at which production is reduced to half maximum due to physical obstruction by the dead material, used only when bioflg = 1 gC/m2:
 :pltmrf::planting month reduction factor to limit seedling growth should be 1.0 for grass:
 :fulcan::value of aglivc at full canopy cover, above which potential production is not reduced:
-:frtcindx::plant growth type = 0 use Great Plains equation = 1 perennial plant = 2 annual plant = 3 perennial plant, growing degree day implementation, dynamic carbon allocation = 4 nongrain filling annual plant, growing degree day implementation, dynamic carbon allocation = 5 grain filling annual plant, growing degree day implementation, dynamic carbon allocation = 6 grain filling annual plant that requires a vernalization period i.e. winter wheat, growing degree day implementation, dynamic carbon allocation
-= 2, 4, 5 or 6
-= 2, 4, 5 or 6
-= 2, 4, 5 or 6
-= 2, 4, 5 or 6
-= 2, 4, 5 or 6
-= 1 or 3
-= 1 or 3
-= 1 or 3
-= 1 or 3:
+:frtcindx::plant growth type = 0 use Great Plains equation = 1 perennial plant = 2 annual plant = 3 perennial plant, growing degree day implementation, dynamic carbon allocation = 4 nongrain filling annual plant, growing degree day implementation, dynamic carbon allocation = 5 grain filling annual plant, growing degree day implementation, dynamic carbon allocation = 6 grain filling annual plant that requires a vernalization period i.e. winter wheat, growing degree day implementation, dynamic carbon allocation = 2, 4, 5 or 6 = 2, 4, 5 or 6 = 2, 4, 5 or 6 = 2, 4, 5 or 6 = 2, 4, 5 or 6 = 1 or 3 = 1 or 3 = 1 or 3 = 1 or 3:
 :frtc_1::fraction of C allocated to roots at planting, with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6:
-:frtc_2::fraction of C allocated to roots at time frtc3, with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6
-value is reached, used when frtcindx = 2, 4, 5 or 6
-frtc5 maximum increase in the fraction of C going to the roots due to nutrient stress, used when frtcindx = 2, 4, 5 or 6:
-:frtc_3::with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6
-time after planting months with soil temperature greater than rtdtmp at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6:
+:frtc_2::fraction of C allocated to roots at time frtc3, with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6 value is reached, used when frtcindx = 2, 4, 5 or 6 frtc5 maximum increase in the fraction of C going to the roots due to nutrient stress, used when frtcindx = 2, 4, 5 or 6:
+:frtc_3::with no water or nutrient stress, used when frtcindx = 2, 4, 5 or 6 time after planting months with soil temperature greater than rtdtmp at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6:
 :frtc_4::maximum increase in the fraction of C going to the roots due to water stress, used when frtcindx = 2, 4, 5 or 6:
 :frtc_5::maximum increase in the fraction of C going to the roots due to nutrient stress, used when frtcindx = 2, 4, 5 or 6:
 :cfrtcn_1::maximum fraction of C allocated to roots under maximum nutrient stress, used when frtcindx = 1 or 3:
@@ -78,8 +65,7 @@ time after planting months with soil temperature greater than rtdtmp at which th
 :rdrj::maximum juvenile fine root death rate at very dry soil conditions fraction/month for getting the monthly root death rate, this fraction is multiplied times a reduction factor depending on the soil water status:
 :rdrm::maximum mature fine root death rate at very dry soil conditions fraction/month for getting the monthly root death rate, this fraction is multiplied times a reduction fraction depending on the soil water status:
 :rdsrfc::the fraction of the fine roots that are transferred into the surface litter layer SRTUCC1 and METABC1 upon root death, the remainder of the roots will go to the soil litter layer STRUCC2 and METABC2:
-:rtdtmp::at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6
-physiological shutdown temperature for root death and change in shoot/root ratio:
+:rtdtmp::at which the frtc2 value is reached, used when frtcindx = 2, 4, 5 or 6 physiological shutdown temperature for root death and change in shoot/root ratio:
 :crprtf_1::fraction of N transferred to a vegetation storage pool from grass/crop leaves at death:
 :crprtf_2::fraction of P transferred to a vegetation storage pool from grass/crop leaves at death:
 :crprtf_3::fraction of S transferred to a vegetation storage pool from grass/crop leaves at death:
@@ -129,7 +115,7 @@ physiological shutdown temperature for root death and change in shoot/root ratio
 :feramt_1::amount of N to be added gN/m2 in scheduled month:
 :feramt_2::amount of P to be added gP/m2 in scheduled month:
 :feramt_3::amount of S to be added gS/m2 in scheduled month:
-:aufert::key for automatic fertilization = 0.0 no automatic fertilization < 1.0 automatic fertilizer may be applied to remove some nutrient stress without increasing nutrient concentration above the minimum  level the value of is the fraction of potential C production temperature and moisture limited which will be maintained > 1.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations above the minimum level a value of between 1.0 and 2.0 determines the extent to which nutrient concentration is maintained between the minimum and maximum levels = 2.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations to the maximum level:
+:aufert::key for automatic fertilization = 0.0 no automatic fertilization < 1.0 automatic fertilizer may be applied to remove some nutrient stress without increasing nutrient concentration above the minimum level the value of is the fraction of potential C production temperature and moisture limited which will be maintained > 1.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations above the minimum level a value of between 1.0 and 2.0 determines the extent to which nutrient concentration is maintained between the minimum and maximum levels = 2.0 automatic fertilizer may be applied to remove nutrient stress and increase nutrient concentrations to the maximum level:
 :ninhib::reduction factor on nitrification rates due to nitrification inhibitors added with fertilizer, 1.0 = no reduction:
 :ninhtm::number of weeks to simulate the effect of the nitrogen inhibitor from the fertilizer addition:
 :frac_nh4::fraction of N fertilizer that is NH4+ ammonium:
@@ -156,8 +142,7 @@ physiological shutdown temperature for root death and change in shoot/root ratio
 :fnue_1::effect of fire on increase in maximum C/N ratio of shoots:
 :fnue_2::effect of fire on increase in maximum C/N ratio of roots:
 -fix-
-:adep_1::depth of soil layer 1 only nlayer+1 values used cm
-0 depth of soil layer 10 only nlayer+1 values used cm:
+:adep_1::depth of soil layer 1 only nlayer+1 values used cm 0 depth of soil layer 10 only nlayer+1 values used cm:
 :adep_2::depth of soil layer 2 only nlayer+1 values used cm:
 :adep_3::depth of soil layer 3 only nlayer+1 values used cm:
 :adep_4::depth of soil layer 4 only nlayer+1 values used cm:
@@ -173,8 +158,7 @@ physiological shutdown temperature for root death and change in shoot/root ratio
 :aneref_2::ratio of rain/potential evapotranspiration above which there is maximum negative impact of soil anaerobic conditions on decomposition:
 :aneref_3::minimum value of the impact of soil anaerobic conditions on decomposition functions as a multiplier for the maximum decomposition rate:
 :animpt::slope term used to vary the impact of soil anaerobic conditions on decomposition flows to the passive soil organic matter pool:
-:awtl_1::weighting factor for transpiration loss for layer 1 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots
-0 weighting factor for transpiration loss for layer 10 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
+:awtl_1::weighting factor for transpiration loss for layer 1 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots 0 weighting factor for transpiration loss for layer 10 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
 :awtl_2::weighting factor for transpiration loss for layer 2 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
 :awtl_3::weighting factor for transpiration loss for layer 3 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
 :awtl_4::weighting factor for transpiration loss for layer 4 only nlayer+1 values used indicates which fraction of the available water can be extracted by the roots:
@@ -237,11 +221,7 @@ physiological shutdown temperature for root death and change in shoot/root ratio
 :lhzf_2::lower horizon factor for slow pool = fraction of slow pool SOM2CI* used in computation of lower horizon pool sizes for soil erosion routines:
 :lhzf_3::lower horizon factor for passive pool = fraction of passive pool SOM3CI* used in computation of lower horizon pool sizes for soil erosion routines:
 :minlch::critical water flow for leaching of minerals cm of H2O leached below 30 cm soil depth:
-:nsnfix::= 1
-= 1
-= 1
-= 1
-equals 1 if nonsymbiotic N fixation should be based on NP ratio in mineral pool, otherwise nonsymbiotic N fixation is based on annual precipitation:
+:nsnfix::= 1 = 1 = 1 = 1 equals 1 if nonsymbiotic N fixation should be based on NP ratio in mineral pool, otherwise nonsymbiotic N fixation is based on annual precipitation:
 :ntspm::number of time steps per month for the decomposition submodel:
 :omlech_1::intercept for the effect of sand on leaching of organic compounds:
 :omlech_2::slope for the effect of sand on leaching of organic compounds:
@@ -274,10 +254,9 @@ equals 1 if nonsymbiotic N fixation should be based on NP ratio in mineral pool,
 :pcemic2_3_3::mimimum S content of decomposing aboveground material, above which the C/S ratio of the surface intermediate pool equals pcemic2,*:
 :peftxa::intercept parameter for regression equation to compute the effect of soil texture on the microbe decomposition rate the effect of texture when there is no sand in the soil:
 :peftxb::slope parameter for the regression equation to compute the effect of soil texture on the microbe decomposition rate the slope is multiplied by the sand content fraction:
-:phesp_1::minimum pH for determining the effect of pH on the solubility of secondary P flow of secondary P to mineral P for texesp2 = m * pH input + b, m and b calculated using these phesp values
-4 and texesp3:
+:phesp_1::minimum pH for determining the effect of pH on the solubility of secondary P flow of secondary P to mineral P for texesp2 = m crop-description.txt crop.def crop.txt cult-description.txt cult.def cult.txt fert-description.txt fert.def fert.txt fire-description.txt fire.def fire.txt fix-description.txt fix.def fix.txt graz.def graz.txt harv.def harv.txt irri.def irri.txt omad.def omad.txt site.def site.txt tree.def tree.txt trem.def trem.txt pH input + b, m and b calculated using these phesp values 4 and texesp3:
 :phesp_2::value of texesp2, the solubility of secondary P, corresponding to minimum pH /yr:
-:phesp_3::maximum pH for determining effect on solubility of secondary P flow of secondary P to mineral P for texesp2 = m * pH input + b, m and b calculated using these phesp values:
+:phesp_3::maximum pH for determining effect on solubility of secondary P flow of secondary P to mineral P for texesp2 = m crop-description.txt crop.def crop.txt cult-description.txt cult.def cult.txt fert-description.txt fert.def fert.txt fire-description.txt fire.def fire.txt fix-description.txt fix.def fix.txt graz.def graz.txt harv.def harv.txt irri.def irri.txt omad.def omad.txt site.def site.txt tree.def tree.txt trem.def trem.txt pH input + b, m and b calculated using these phesp values:
 :phesp_4::value of texesp2, the solubility of secondary P, corresponding to maximum pH /yr:
 :pligst_1::effect of lignin on surface structural or fine branch and large wood decomposition:
 :pligst_2::effect of lignin on soil structural or coarse root decomposition:
@@ -290,8 +269,7 @@ equals 1 if nonsymbiotic N fixation should be based on NP ratio in mineral pool,
 :pmxbio::maximum dead biomass standing dead + 10% litter level for soil temperature calculation and for calculation of the potential negative effect on plant growth of physical obstruction by standing dead and litter:
 :pmxtmp::effect of biomass on maximum surface temperature:
 :pparmn_1::N controls the flow from parent material to mineral compartment fraction of parent material that flows to mineral N, P, and S:
-:pparmn_2::P controls the flow from parent material to mineral compartment used when texepp1 is not = 1 fraction of parent material that flows to mineral N, P, and S
-in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
+:pparmn_2::P controls the flow from parent material to mineral compartment used when texepp1 is not = 1 fraction of parent material that flows to mineral N, P, and S in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
 :pparmn_3::S controls the flow from parent material to mineral compartment fraction of parent material that flows to mineral N, P, and S:
 :pprpts_1::the minimum ratio of available water to PET which would completely limit production assuming WC = 0:
 :pprpts_2::the effect of WC on the intercept, allows the user to increase the value of the intercept and thereby increase the slope of the line:
@@ -303,8 +281,7 @@ in the weathering equation = 1 include the effect of texture using the remaining
 :ps2s3_1::intercept value which controls flow from soil organic matter with intermediate turnover to soil organic matter with slow turnover fraction of C from som2c to som3c:
 :ps2s3_2::slope value which controls flow from soil organic matter with intermediate turnover to soil organic matter with slow turnover fraction of C from som2c to som3c:
 :psecmn_1::N controls the flow from secondary to mineral N:
-:psecmn_2::P controls the flow from secondary to mineral P
-in the weathering equation = 1 include the effect of pH and sand content using the equation specified by texesp2 a function of pH and phesp14 and texesp3:
+:psecmn_2::P controls the flow from secondary to mineral P in the weathering equation = 1 include the effect of pH and sand content using the equation specified by texesp2 a function of pH and phesp14 and texesp3:
 :psecmn_3::S controls the flow from secondary to mineral S:
 :psecoc1::controls the flow from secondary to occluded P:
 :psecoc2::controls the back flow from occluded to secondary P:
@@ -328,8 +305,7 @@ in the weathering equation = 1 include the effect of pH and sand content using t
 :spl_2::slope parameter for metabolic split fraction metabolic is a function of lignin to N ratio:
 :strmax_1::maximum amount of structural material in surface layer that will decompose gC/m2:
 :strmax_2::maximum amount of structural material belowground that will decompose gC/m2:
-:texepp_1::is not = 1 fraction of parent material that flows to mineral N, P, and S
-texture effect on parent P mineralization = 0 use pparmn2 in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
+:texepp_1::is not = 1 fraction of parent material that flows to mineral N, P, and S texture effect on parent P mineralization = 0 use pparmn2 in the weathering equation = 1 include the effect of texture using the remaining texepp values with the arctangent function:
 :texepp_2::x location of inflection point used in determining texture effect on parent P mineralization:
 :texepp_3::y location of inflection point used in determining texture effect on parent P mineralization:
 :texepp_4::step size distance from the maximum point to the minimum point used in determining texture effect on parent P mineralization:
@@ -413,9 +389,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :remwsd::fraction of the remaining residue that will be left standing:
 :hibg::fraction of roots that will be harvested:
 -irri-
-:auirri::controls application of automatic irrigation = 0 automatic irrigation is off = 1 irrigate to field capacity = 2 irrigate with a specified amount of water applied = 3 irrigate to field capacity plus PET
-= 1 or 2
-= 2 cm:
+:auirri::controls application of automatic irrigation = 0 automatic irrigation is off = 1 irrigate to field capacity = 2 irrigate with a specified amount of water applied = 3 irrigate to field capacity plus PET = 1 or 2 = 2 cm:
 :fawhc::fraction of available water holding capacity below which automatic irrigation will be used when auirri = 1 or 2:
 :irraut::amount of water to apply automatically when auirri = 2 cm:
 :irramt::amount of water to apply regardless of soil water status cm:
@@ -427,10 +401,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :astrec_2::C/P ratio of added organic matter:
 :astrec_3::C/S ratio of added organic matter:
 -site-
-:precip_1::precipitation for January cm/month
-0 precipitation for October cm/month
-1 precipitation for November cm/month
-2 precipitation for December cm/month:
+:precip_1::precipitation for January cm/month 0 precipitation for October cm/month 1 precipitation for November cm/month 2 precipitation for December cm/month:
 :precip_2::precipitation for February cm/month:
 :precip_3::precipitation for March cm/month:
 :precip_4::precipitation for April cm/month:
@@ -442,10 +413,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :precip_10::precipitation for October cm/month:
 :precip_11::precipitation for November cm/month:
 :precip_12::precipitation for December cm/month:
-:prcstd_1::standard deviations for January precipitation value cm/month
-0 standard deviations for October precipitation value cm/month
-1 standard deviations for November precipitation value cm/month
-2 standard deviations for December precipitation value cm/month:
+:prcstd_1::standard deviations for January precipitation value cm/month 0 standard deviations for October precipitation value cm/month 1 standard deviations for November precipitation value cm/month 2 standard deviations for December precipitation value cm/month:
 :prcstd_2::standard deviations for February precipitation value cm/month:
 :prcstd_3::standard deviations for March precipitation value cm/month:
 :prcstd_4::standard deviations for April precipitation value cm/month:
@@ -457,10 +425,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :prcstd_10::standard deviations for October precipitation value cm/month:
 :prcstd_11::standard deviations for November precipitation value cm/month:
 :prcstd_12::standard deviations for December precipitation value cm/month:
-:prcskw_1::skewness value for January precipitation
-0 skewness value for October precipitation
-1 skewness value for November precipitation
-2 skewness value for December precipitation:
+:prcskw_1::skewness value for January precipitation 0 skewness value for October precipitation 1 skewness value for November precipitation 2 skewness value for December precipitation:
 :prcskw_2::skewness value for February precipitation:
 :prcskw_3::skewness value for March precipitation:
 :prcskw_4::skewness value for April precipitation:
@@ -472,10 +437,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :prcskw_10::skewness value for October precipitation:
 :prcskw_11::skewness value for November precipitation:
 :prcskw_12::skewness value for December precipitation:
-:tmn2m_1::January minimum temperature at 2 meters deg C
-0 October minimum temperature at 2 meters deg C
-1 November minimum temperature at 2 meters deg C
-2 December minimum temperature at 2 meters deg C:
+:tmn2m_1::January minimum temperature at 2 meters deg C 0 October minimum temperature at 2 meters deg C 1 November minimum temperature at 2 meters deg C 2 December minimum temperature at 2 meters deg C:
 :tmn2m_2::February minimum temperature at 2 meters deg C:
 :tmn2m_3::March minimum temperature at 2 meters deg C:
 :tmn2m_4::April minimum temperature at 2 meters deg C:
@@ -487,10 +449,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :tmn2m_10::October minimum temperature at 2 meters deg C:
 :tmn2m_11::November minimum temperature at 2 meters deg C:
 :tmn2m_12::December minimum temperature at 2 meters deg C:
-:tmx2m_1::January maximum temperature at 2 meters deg C
-0 October maximum temperature at 2 meters deg C
-1 November maximum temperature at 2 meters deg C
-2 December maximum temperature at 2 meters deg C:
+:tmx2m_1::January maximum temperature at 2 meters deg C 0 October maximum temperature at 2 meters deg C 1 November maximum temperature at 2 meters deg C 2 December maximum temperature at 2 meters deg C:
 :tmx2m_2::February maximum temperature at 2 meters deg C:
 :tmx2m_3::March maximum temperature at 2 meters deg C:
 :tmx2m_4::April maximum temperature at 2 meters deg C:
@@ -502,10 +461,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :tmx2m_10::October maximum temperature at 2 meters deg C:
 :tmx2m_11::November maximum temperature at 2 meters deg C:
 :tmx2m_12::December maximum temperature at 2 meters deg C:
-:sradj_1::Solar radiation adjustment for cloud cover & transmission coefficient for January
-0 Solar radiation adjustment for cloud cover & transmission coefficient for October
-1 Solar radiation adjustment for cloud cover & transmission coefficient for November
-2 Solar radiation adjustment for cloud cover & transmission coefficient for December:
+:sradj_1::Solar radiation adjustment for cloud cover & transmission coefficient for January 0 Solar radiation adjustment for cloud cover & transmission coefficient for October 1 Solar radiation adjustment for cloud cover & transmission coefficient for November 2 Solar radiation adjustment for cloud cover & transmission coefficient for December:
 :sradj_2::Solar radiation adjustment for cloud cover & transmission coefficient for February:
 :sradj_3::Solar radiation adjustment for cloud cover & transmission coefficient for March:
 :sradj_4::Solar radiation adjustment for cloud cover & transmission coefficient for April:
@@ -518,34 +474,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :sradj_11::Solar radiation adjustment for cloud cover & transmission coefficient for November:
 :sradj_12::Solar radiation adjustment for cloud cover & transmission coefficient for December:
 :rainhr::Duration of each rain event:
-:ivauto::use Burke's equations to initialize soil C pools = 0 the user has supplied the initial values = 1 initialize using the grassland soil parameters = 2 initialize using the crop soil parameters
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 g/m2
-= 0 g/m2
-= 0 g/m2
-= 0 g/m2
-= 0 or 2 gN/m2
-= 0 or 2gP/m2
-= 0 or 2gS/m2
-= 0 or 2 gC/m2
-= 0 or 2 gC/m2
-= 0 or 2 gN/m2
-= 0 or 2 gP/m2
-= 0 or 2 gS/m2
-= 0 gC/m2
-= 0 gC/m2
-= 0 gN/m2
-= 0 gP/m2
-= 0 gS/m2:
+:ivauto::use Burke's equations to initialize soil C pools = 0 the user has supplied the initial values = 1 initialize using the grassland soil parameters = 2 initialize using the crop soil parameters = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 gC/m2 = 0 g/m2 = 0 g/m2 = 0 g/m2 = 0 g/m2 = 0 or 2 gN/m2 = 0 or 2gP/m2 = 0 or 2gS/m2 = 0 or 2 gC/m2 = 0 or 2 gC/m2 = 0 or 2 gN/m2 = 0 or 2 gP/m2 = 0 or 2 gS/m2 = 0 gC/m2 = 0 gC/m2 = 0 gN/m2 = 0 gP/m2 = 0 gS/m2:
 :nelem::number of elements besides C to be simulated = 1 simulate N = 2 simulate N and P = 3 simulate N, P and S:
 :sitlat::latitude of model site deg:
 :sitlng::longitude of model site deg for reference only:
@@ -566,29 +495,8 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :stormf::the fraction of flow from NLAYER to NLAYER+1 which goes into storm flow:
 :precro::the amount of monthly rainfall required in order for runoff to occur:
 :fracro::the fraction of the monthly rainfall, over PRECRO, which is lost via runoff:
-:swflag::flag indicating the source of the values for awilt and afiel, either from actual data from the <site>.100 file or from equations from Gupta and Larson 1979 or Rawls et al. 1982 = 0 use actual data from the <site>.100 file = 1 use G & L for both awilt 15 bar and afiel 0.33 bar [old way, version 3] = 2 use G & L for both awilt 15 bar and afiel 0.10 bar = 3 use Rawls for both awilt 15 bar and afiel 0.33 bar = 4 use Rawls for both awilt 15 bar and afiel 0.10 bar = 5 use Rawls for afiel 0.33 bar with actual data for awilt = 6 use Rawls for afiel 0.10 bar with actual data for awilt
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0, 5, or 6
-= 0
-= 0
-= 0
-= 0
-= 0
-= 0
-= 0
-= 0
-= 0
-= 0:
-:awilt_1::the wilting point of soil layer 1 fraction used only if swflag = 0, 5, or 6
-0 the wilting point of soil layer 10 fraction used only if swflag = 0, 5, or 6:
+:swflag::flag indicating the source of the values for awilt and afiel, either from actual data from the <site>.100 file or from equations from Gupta and Larson 1979 or Rawls et al. 1982 = 0 use actual data from the <site>.100 file = 1 use G & L for both awilt 15 bar and afiel 0.33 bar [old way, version 3] = 2 use G & L for both awilt 15 bar and afiel 0.10 bar = 3 use Rawls for both awilt 15 bar and afiel 0.33 bar = 4 use Rawls for both awilt 15 bar and afiel 0.10 bar = 5 use Rawls for afiel 0.33 bar with actual data for awilt = 6 use Rawls for afiel 0.10 bar with actual data for awilt = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0, 5, or 6 = 0 = 0 = 0 = 0 = 0 = 0 = 0 = 0 = 0 = 0:
+:awilt_1::the wilting point of soil layer 1 fraction used only if swflag = 0, 5, or 6 0 the wilting point of soil layer 10 fraction used only if swflag = 0, 5, or 6:
 :awilt_2::the wilting point of soil layer 2 fraction used only if swflag = 0, 5, or 6:
 :awilt_3::the wilting point of soil layer 3 fraction used only if swflag = 0, 5, or 6:
 :awilt_4::the wilting point of soil layer 4 fraction used only if swflag = 0, 5, or 6:
@@ -598,8 +506,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :awilt_8::the wilting point of soil layer 8 fraction used only if swflag = 0, 5, or 6:
 :awilt_9::the wilting point of soil layer 9 fraction used only if swflag = 0, 5, or 6:
 :awilt_10::the wilting point of soil layer 10 fraction used only if swflag = 0, 5, or 6:
-:afiel_1::the field capacity of soil layer 1 fraction used only if swflag = 0
-0 the field capacity of soil layer 10 fraction used only if swflag = 0:
+:afiel_1::the field capacity of soil layer 1 fraction used only if swflag = 0 0 the field capacity of soil layer 10 fraction used only if swflag = 0:
 :afiel_2::the field capacity of soil layer 2 fraction used only if swflag = 0:
 :afiel_3::the field capacity of soil layer 3 fraction used only if swflag = 0:
 :afiel_4::the field capacity of soil layer 4 fraction used only if swflag = 0:
@@ -609,11 +516,7 @@ texture effect on parent P mineralization = 0 use pparmn2 in the weathering equa
 :afiel_8::the field capacity of soil layer 8 fraction used only if swflag = 0:
 :afiel_9::the field capacity of soil layer 9 fraction used only if swflag = 0:
 :afiel_10::the field capacity of soil layer 10 fraction used only if swflag = 0:
-:ph::soil pH used to calculate the solubility of secondary P within the boundaries specified by esp1 and esp3
-eric N fixation wet and dry deposition g/m2/y/cm precip
-eric N fixation wet and dry deposition g/m2/yr/cm precip
-eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip
-eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
+:ph::soil pH used to calculate the solubility of secondary P within the boundaries specified by esp1 and esp3 eric N fixation wet and dry deposition g/m2/y/cm precip eric N fixation wet and dry deposition g/m2/yr/cm precip eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
 :pslsrb::slope term which controls the fraction of mineral P that is labile:
 :sorpmx::maximum P sorption potential for a soil:
 :sublim::Multiplier on ation:
@@ -760,8 +663,7 @@ eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
 :secndy_2::initial P value for secondary P gP/m2:
 :secndy_3::initial S value for secondary S gS/m2:
 :occlud::initial value for ed P gP/m2:
-:rwcf_1::initial relative water content for layer 1
-0 initial relative water content for layer 10:
+:rwcf_1::initial relative water content for layer 1 0 initial relative water content for layer 10:
 :rwcf_2::initial relative water content for layer 2:
 :rwcf_3::initial relative water content for layer 3:
 :rwcf_4::initial relative water content for layer 4:
@@ -772,17 +674,10 @@ eric S inputs as a linear function of annual precipitation g S /m2/yr/cm precip:
 :rwcf_9::initial relative water content for layer 9:
 :rwcf_10::initial relative water content for layer 10:
 :snlq::liquid water in the snow pack cm of H2O:
-:snow::albedo
-pack cm of H2O
-pack water content cm of H2O
-effect on soil surface temp 0 = not insulating, 1 = insulating:
+:snow::albedo pack cm of H2O pack water content cm of H2O effect on soil surface temp 0 = not insulating, 1 = insulating:
 :snwins::snow effect on soil surface temp 0 = not insulating, 1 = insulating:
 -tree-
-:decid::type of forest = 0 if forest is continuous = 1 if forest is temperatureuous = 2 if forest is droughtuous
-uous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate uous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate uous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved
-uous the fraction of leaves which fall during senescence month or at the end of the growing season, used when = 1 or 2
-uous tree type, degrees C
-uous tree type, degrees C:
+:decid::type of forest = 0 if forest is continuous = 1 if forest is temperatureuous = 2 if forest is droughtuous uous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate uous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate uous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved uous the fraction of leaves which fall during senescence month or at the end of the growing season, used when = 1 or 2 uous tree type, degrees C uous tree type, degrees C:
 :prdx_2::coefficient for calculating potential monthly forest production as a function of solar radiation outside the atmosphere:
 :ppdf_1::optimum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
 :ppdf_2::maximum temperature for production for parameterization of a Poisson Density Function curve to simulate temperature effect on growth:
@@ -861,10 +756,7 @@ uous tree type, degrees C:
 :tfrtcn_2::minimum fraction of C allocated to fine roots with no water stress:
 :tfrtcw_1::maximum fraction of C allocated to fine roots under maximum nutrient stress:
 :tfrtcw_2::minimum fraction of C allocated to fine roots with no nutrient stress:
-:leafdr_1::monthly death rate fraction for leaves
-0 monthly death rate fraction for leaves
-1 monthly death rate fraction for leaves
-2 monthly death rate fraction for leaves:
+:leafdr_1::monthly death rate fraction for leaves 0 monthly death rate fraction for leaves 1 monthly death rate fraction for leaves 2 monthly death rate fraction for leaves:
 :leafdr_2::monthly death rate fraction for leaves:
 :leafdr_3::monthly death rate fraction for leaves:
 :leafdr_4::monthly death rate fraction for leaves:
@@ -878,9 +770,8 @@ uous tree type, degrees C:
 :leafdr_12::monthly death rate fraction for leaves:
 :btolai::biomass to leaf area index LAI conversion factor for trees some suggested values arctic tundra 0.008 arid savanna/shrubland 0.007 boreal forest 0.004 coniferous/deciduous mix forest 0.007 grassland 0.008 maritime coniferous forest 0.004 temperate coniferous forest 0.004 temperate coniferous savanna 0.004 temperate deciduous savanna 0.01 temperate mixed savanna 0.007 tropical evergreen forest 0.01 tropical savanna 0.006 warm temperate deciduous forest 0.01klai large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved:
 :klai::large wood mass g C/m2 at which half of the theoretical maximum leaf area maxlai is achieved:
-:laitop::parameter determining relationship between LAI and forest production LAI effect = 1 exp * LAI:
-:maxlai::is achieved
-theoretical maximum leaf area index achieved in mature forest:
+:laitop::parameter determining relationship between LAI and forest production LAI effect = 1 exp crop-description.txt crop.def crop.txt cult-description.txt cult.def cult.txt fert-description.txt fert.def fert.txt fire-description.txt fire.def fire.txt fix-description.txt fix.def fix.txt graz-description.txt graz.def graz.txt harv-description.txt harv.def harv.txt irri-description.txt irri.def irri.txt omad-description.txt omad.def omad.txt site-description.txt site.def site.txt tree-description.txt tree.def tree.txt trem.def trem.txt LAI:
+:maxlai::is achieved theoretical maximum leaf area index achieved in mature forest:
 :maxldr::multiplier for effect of N availability on leaf death rates continously growing forest systems only a ratio between death rate at unlimited vs. severly limited N status:
 :forrtf_1::fraction of N retranslocated from green forest leaves at death:
 :forrtf_2::fraction of P retranslocated from green forest leaves at death:
@@ -913,7 +804,7 @@ theoretical maximum leaf area index achieved in mature forest:
 :co2ice_2_2_3::in a forest system, the effect on maximum C/S ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
 :co2irs_2::in a forest system, the effect on rootshoot ratio of doubling the atmospheric CO2 concentration from 350 ppm to 700 ppm:
 :basfc2::savanna only relates tree basal area to grass N fraction higher value gives more N to trees if not running savanna, set to 1.0:
-:basfct::savanna only ratio between basal area and wood biomass cm2/g it is equal to form factor * wood density * tree height if not running savanna, set to 1.0:
+:basfct::savanna only ratio between basal area and wood biomass cm2/g it is equal to form factor crop-description.txt crop.def crop.txt cult-description.txt cult.def cult.txt fert-description.txt fert.def fert.txt fire-description.txt fire.def fire.txt fix-description.txt fix.def fix.txt graz-description.txt graz.def graz.txt harv-description.txt harv.def harv.txt irri-description.txt irri.def irri.txt omad-description.txt omad.def omad.txt site-description.txt site.def site.txt tree-description.txt tree.def tree.txt trem.def trem.txt wood density crop-description.txt crop.def crop.txt cult-description.txt cult.def cult.txt fert-description.txt fert.def fert.txt fire-description.txt fire.def fire.txt fix-description.txt fix.def fix.txt graz-description.txt graz.def graz.txt harv-description.txt harv.def harv.txt irri-description.txt irri.def irri.txt omad-description.txt omad.def omad.txt site-description.txt site.def site.txt tree-description.txt tree.def tree.txt trem.def trem.txt tree height if not running savanna, set to 1.0:
 :sitpot::multiplier for equation to dynamically compute measure of the aboveground herbaceous layer production in kg ha1 yr1 in the absence of trees:
 :maxnp::maximum N/P ratio for leaves, used only when nelem >= 2:
 :kmrsp_2::the fraction of net primary production that goes to the maintenance respiration storage pool for trees:
