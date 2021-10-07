@@ -803,6 +803,9 @@ uous tree type, degrees C:
 :cerfor_1_5_1::minimum C/N ratio for coarse roots:
 :cerfor_1_5_2::minimum C/P ratio for coarse roots:
 :cerfor_1_5_3::minimum C/S ratio for coarse roots:
+:cerfor_1_6_1::minimum C/N, fruit/nut:
+:cerfor_1_6_2::minimum C/P, fruit/nut:
+:cerfor_1_6_3::minimum C/S, fruit/nut:
 :cerfor_2_1_1::maximum C/N ratio for leaves:
 :cerfor_2_1_2::maximum C/P ratio for leaves:
 :cerfor_2_1_3::maximum C/S ratio for leaves:
@@ -818,6 +821,9 @@ uous tree type, degrees C:
 :cerfor_2_5_1::maximum C/N ratio for coarse roots:
 :cerfor_2_5_2::maximum C/P ratio for coarse roots:
 :cerfor_2_5_3::maximum C/S ratio for coarse roots:
+:cerfor_2_6_1::maximum C/N, fruit/nut:
+:cerfor_2_6_2::maximum C/P, fruit/nut:
+:cerfor_2_6_3::maximum C/S, fruit/nut:
 :cerfor_3_1_1::initial C/N ratio for leaves:
 :cerfor_3_1_2::initial C/P ratio for leaves:
 :cerfor_3_1_3::initial C/S ratio for leaves:
@@ -833,6 +839,9 @@ uous tree type, degrees C:
 :cerfor_3_5_1::initial C/N ratio for coarse roots:
 :cerfor_3_5_2::initial C/P ratio for coarse roots:
 :cerfor_3_5_3::initial C/S ratio for coarse roots:
+:cerfor_3_6_1::initial C/N, fruit/nut:
+:cerfor_3_6_2::initial C/P, fruit/nut:
+:cerfor_3_6_3::initial C/S, fruit/nut:
 :decw1::maximum decomposition rate constant for wood1 dead fine branch per year before temperature and moisture effects applied:
 :decw2::maximum decomposition rate constant for wood2 dead large wood per year before temperature and moisture effects applied:
 :decw3::maximum decomposition rate constant for wood3 dead coarse root per year before temperature and moisture effects applied:
@@ -841,11 +850,13 @@ uous tree type, degrees C:
 :fcfrac_3_1::C allocation fraction of new production of fine branches for juvenile forest time < swold:
 :fcfrac_4_1::C allocation fraction of new production of large wood for juvenile forest time < swold:
 :fcfrac_5_1::C allocation fraction of new production of coarse roots for juvenile forest time < swold:
+:fcfrac_6_1::Peak C allocation fraction to Fruit/Nut during growth for juvenile forest. The default is 0.0, no fruit growth:
 :fcfrac_1_2::C allocation fraction of new production of leaves for mature forest time >= swold:
 :fcfrac_2_2::C allocation fraction of new production of fine roots for mature forest time >= swold:
 :fcfrac_3_2::C allocation fraction of new production of fine branches for mature forest time >= swold:
 :fcfrac_4_2::C allocation fraction of new production of large wood for mature forest time >= swold:
 :fcfrac_5_2::C allocation fraction of new production of coarse roots for mature forest time >= swold:
+:fcfrac_6_2::Peak C allocation fraction to Fruit/Nut during growth for mature forest. The default is 0.0, no fruit growth:
 :tfrtcn_1::maximum fraction of C allocated to fine roots under maximum water stress:
 :tfrtcn_2::minimum fraction of C allocated to fine roots with no water stress:
 :tfrtcw_1::maximum fraction of C allocated to fine roots under maximum nutrient stress:

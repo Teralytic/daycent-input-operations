@@ -747,6 +747,9 @@ type Tree struct {
 	Cerfor_1_5_1 C.int `json:"cerfor_1_5_1"`
 	Cerfor_1_5_2 C.int `json:"cerfor_1_5_2"`
 	Cerfor_1_5_3 C.int `json:"cerfor_1_5_3"`
+	Cerfor_1_6_1 C.int `json:"cerfor_1_6_1"`
+	Cerfor_1_6_2 C.int `json:"cerfor_1_6_2"`
+	Cerfor_1_6_3 C.int `json:"cerfor_1_6_3"`
 	Cerfor_2_1_1 C.int `json:"cerfor_2_1_1"`
 	Cerfor_2_1_2 C.int `json:"cerfor_2_1_2"`
 	Cerfor_2_1_3 C.int `json:"cerfor_2_1_3"`
@@ -762,6 +765,9 @@ type Tree struct {
 	Cerfor_2_5_1 C.int `json:"cerfor_2_5_1"`
 	Cerfor_2_5_2 C.int `json:"cerfor_2_5_2"`
 	Cerfor_2_5_3 C.int `json:"cerfor_2_5_3"`
+	Cerfor_2_6_1 C.int `json:"cerfor_2_6_1"`
+	Cerfor_2_6_2 C.int `json:"cerfor_2_6_2"`
+	Cerfor_2_6_3 C.int `json:"cerfor_2_6_3"`
 	Cerfor_3_1_1 C.int `json:"cerfor_3_1_1"`
 	Cerfor_3_1_2 C.int `json:"cerfor_3_1_2"`
 	Cerfor_3_1_3 C.int `json:"cerfor_3_1_3"`
@@ -777,6 +783,9 @@ type Tree struct {
 	Cerfor_3_5_1 C.int `json:"cerfor_3_5_1"`
 	Cerfor_3_5_2 C.int `json:"cerfor_3_5_2"`
 	Cerfor_3_5_3 C.int `json:"cerfor_3_5_3"`
+	Cerfor_3_6_1 C.int `json:"cerfor_3_6_1"`
+	Cerfor_3_6_2 C.int `json:"cerfor_3_6_2"`
+	Cerfor_3_6_3 C.int `json:"cerfor_3_6_3"`
 	Decw1        C.int `json:"decw1"`
 	Decw2        C.int `json:"decw2"`
 	Decw3        C.int `json:"decw3"`
@@ -785,11 +794,13 @@ type Tree struct {
 	Fcfrac_3_1   C.int `json:"fcfrac_3_1"`
 	Fcfrac_4_1   C.int `json:"fcfrac_4_1"`
 	Fcfrac_5_1   C.int `json:"fcfrac_5_1"`
+	Fcfrac_6_1   C.int `json:"fcfrac_6_1"`
 	Fcfrac_1_2   C.int `json:"fcfrac_1_2"`
 	Fcfrac_2_2   C.int `json:"fcfrac_2_2"`
 	Fcfrac_3_2   C.int `json:"fcfrac_3_2"`
 	Fcfrac_4_2   C.int `json:"fcfrac_4_2"`
 	Fcfrac_5_2   C.int `json:"fcfrac_5_2"`
+	Fcfrac_6_2   C.int `json:"fcfrac_6_2"`
 	Tfrtcn_1     C.int `json:"tfrtcn_1"`
 	Tfrtcn_2     C.int `json:"tfrtcn_2"`
 	Tfrtcw_1     C.int `json:"tfrtcw_1"`
