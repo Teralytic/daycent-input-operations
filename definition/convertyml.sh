@@ -25,13 +25,15 @@ while read line; do
     if [ "$header" != "" ]
     then
         echo "                        $header:
-                            type: object
-                            properties:" >> $swagger
+                            type: array
+                            items:
+                                type: object
+                                properties:" >> $swagger
     elif [ "$trim" != "" ]
     then
-        echo "                                $trim:
-                                    description: \"$desc\"
-                                    type: integer" >> $swagger
+        echo "                                    $trim:
+                                        description: \"$desc\"
+                                        type: integer" >> $swagger
     fi 
 done < data100.delineated
 
