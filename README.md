@@ -4,7 +4,7 @@
 * convertjson.sh - converts from simulation to json [in progress]
 * delineate.sh - converts .def files into delineateable form [done]
 * gostruct.sh - converts from delineateable form to go struct [done]
-* ymlconvert.sh - converts from delineateable form to yaml [in progress]
+* ymlconvert.sh - converts from delineateable form to yaml [done]
 * cstruct.sh - converts from delineateable form to c struct [todo]
 * fortstruct.sh - converts from delineateable form to fortran struct [todo]
 
@@ -137,218 +137,218 @@
   * start inputting your weather data, (you need data for every day you want to simulate)
 
   ``` json
-{
-  "simulation": {
-    "data100": {
-      "site": ".100 file inputs"
-    },
-    "soils": [
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
+  {  
+    "simulation": {
+      "data100": {
+        "site": ".100 file inputs"
       },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      },
-      {
-        "udsl": 0,
-        "ldsl": 1,
-        "bdsl": 0.8,
-        "fcsl": 0.5,
-        "wpsl": 0.8,
-        "ecsl": 0,
-        "frsl": 0.5,
-        "fssl": 0.5,
-        "omsl": 0.5,
-        "wcsl": 0.34,
-        "hcsl": 0.32,
-        "phsl": 0.4
-      }
-    ],
-    "weather": {
-      "usexdrvrs": 0,
-      "data": [
+      "soils": [
         {
-          "dom": 1,
-          "moy": 1,
-          "year": 1,
-          "day": 1,
-          "maxTemp": 32,
-          "minTemp": 3,
-          "precip": 9.32
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
         },
         {
-          "dom": 2,
-          "moy": 1,
-          "year": 1,
-          "day": 2,
-          "maxTemp": 32,
-          "minTemp": 3,
-          "precip": 9.32
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
+        },
+        {
+          "udsl": 0,
+          "ldsl": 1,
+          "bdsl": 0.8,
+          "fcsl": 0.5,
+          "wpsl": 0.8,
+          "ecsl": 0,
+          "frsl": 0.5,
+          "fssl": 0.5,
+          "omsl": 0.5,
+          "wcsl": 0.34,
+          "hcsl": 0.32,
+          "phsl": 0.4
         }
-      ]
+      ],
+      "weather": {
+        "usexdrvrs": 0,
+        "data": [
+          {
+            "dom": 1,
+            "moy": 1,
+            "year": 1,
+            "day": 1,
+            "maxTemp": 32,
+            "minTemp": 3,
+            "precip": 9.32
+          },
+          {
+            "dom": 2,
+            "moy": 1,
+            "year": 1,
+            "day": 2,
+            "maxTemp": 32,
+            "minTemp": 3,
+            "precip": 9.32
+          }
+        ]
+      }
     }
   }
-}
   ```
