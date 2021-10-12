@@ -48,7 +48,7 @@ type Data100 struct {" >> data100-head.go
 
 while read line; do
     lowercaseLine=$(echo "$line" | tr [A-Z] [a-z])
-    echo "  $line $line \`json:\"$lowercaseLine\"\`" >> data100-head.go
+    echo "  $line []$line \`json:\"$lowercaseLine\"\`" >> data100-head.go
 done < data100
 echo "}" >> data100-head.go
 

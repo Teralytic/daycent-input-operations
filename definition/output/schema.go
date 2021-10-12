@@ -13,18 +13,18 @@ type Simulation struct {
 }
 
 type Data100 struct {
-	Crop Crop `json:"crop"`
-	Cult Cult `json:"cult"`
-	Fert Fert `json:"fert"`
-	Fire Fire `json:"fire"`
-	Fix  Fix  `json:"fix"`
-	Graz Graz `json:"graz"`
-	Harv Harv `json:"harv"`
-	Irri Irri `json:"irri"`
-	Omad Omad `json:"omad"`
-	Site Site `json:"site"`
-	Tree Tree `json:"tree"`
-	Trem Trem `json:"trem"`
+	Crop []Crop `json:"crop"`
+	Cult []Cult `json:"cult"`
+	Fert []Fert `json:"fert"`
+	Fire []Fire `json:"fire"`
+	Fix  []Fix  `json:"fix"`
+	Graz []Graz `json:"graz"`
+	Harv []Harv `json:"harv"`
+	Irri []Irri `json:"irri"`
+	Omad []Omad `json:"omad"`
+	Site []Site `json:"site"`
+	Tree []Tree `json:"tree"`
+	Trem []Trem `json:"trem"`
 }
 
 type Crop struct {
