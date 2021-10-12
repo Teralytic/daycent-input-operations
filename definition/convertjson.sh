@@ -12,6 +12,7 @@ dos2unix *.100
 
 # dump Data100 key-value pairs into file
 getPairs() {
+    rm $pairFile &> /dev/null
     # remove unkown utf-8 symbols
     for file in *.100; do
         iconv -c -f utf-8 -t ascii "$file" > $file.ununicoded
@@ -36,68 +37,59 @@ getPairs() {
 
 jsonInit() {
     echo "{
-        \"simulation\": {
-            \"data100\": {" >> $jsonFile
+    \"simulation\": {
+        \"data100\": {" >> $jsonFile
 }
 
-jsonFmt() {
+jsonFmtData100() {
     jsonInit
-    keyList=""
+    comeback=0
     while read line; do
         header=$(echo "$line" | grep -Po "^-.*-" | sed -E 's/-//g')
         value=$(echo "$line" | grep -Po "::.*:" | sed -E 's/://g')
         key=$(echo "$line" | grep -Po ":.*::" | sed -E 's/://g')
 
-        if [ "$header" != "" ]
+        if [ "$header" != "" ] && [ $comeback == 1 ]
         then
-            echo "                \"$header\": [
-                    {" >> $jsonFile
-            keyList=""
+            sed -i '$ s/,//' $jsonFile
+            echo "                }
+            ]," >> $jsonFile
+            echo "            \"$header\": [
+                {" >> $jsonFile
 
-            echo "cleared $header"
+            echo "working on $header"
+            firstKey=1
+        elif [ "$header" != "" ]
+        then
+            echo "            \"$header\": [
+                {" >> $jsonFile
+
+            echo "working on $header"
+            comeback=1
+            firstKey=1
         else
-            lineWithComma=$(echo "                        \"$key\": $value,")
-            lineWithoutComma=$(echo "                        \"$key\": $value")
-            searchString=$(echo "$keyList" | grep -Po "${key}")
-            isFirstObj="yes"
-            if [ "$key" != "$searchString" ]
+            pair=$(echo "                    \"$key\": $value,")
+            if [ $firstKey == 1 ]
             then
-                keyList=$(echo "$keyList:$key")
-                echo "$lineWithComma" >> $jsonFile
-            elif [ "$isFirstObj" == "yes" ]
+                firstKey=0
+                searchString="$key"
+                echo "$pair" >> $jsonFile
+            elif [ "$key" == "$searchString" ]
             then
-                echo "                        \"$key\": $value," >> $jsonFile
-                isFirstObj=""
+                sed -i '$ s/,//' $jsonFile
+                echo "                },
+                {" >> $jsonFile
+                echo "$pair" >> $jsonFile
             else
-                echo "$lineWithoutComma yes" >> $jsonFile
-                echo "}," >> $jsonFile
-                keyList="$key"
-                isFirstObj="yes"
-                # make new object
-                # clear keyList
+                echo "$pair" >> $jsonFile
             fi
-            # add final closing brace
         fi
-        
     done < $pairFile
+    sed -i '$ s/,//' $jsonFile
+    echo "                }
+            ]," >> $jsonFile
 }
 
-
-
-# # format pair into json
-# jsonFmt() {
-#     key="$1"
-#     value="$2"
-
-#     while read line; do
-        
-#     done < $jsonFile
-
-#     # test string lol
-#     echo "                                "\"$key\"": $value," >> $jsonFile
-# }
-
-jsonFmt
-
-# cleanup env
+getPairs
+jsonFmtData100
 echo "done"
