@@ -1,0 +1,98 @@
+{
+    "simulation": {
+        "data100": {
+            "cult": [
+                {
+                    "cultra_1": 0.0,
+                    "cultra_2": 0.00,
+                    "cultra_3": 0.00,
+                    "cultra_4": 0.00,
+                    "cultra_5": 0.00,
+                    "cultra_6": 0.50,
+                    "cultra_7": 0.0,
+                    "clteff_1": 1.000,
+                    "clteff_2": 1.000,
+                    "clteff_3": 1.000,
+                    "clteff_4": 1.000
+                },
+                {
+                    "cultra_1": 0.4,
+                    "cultra_2": 0.4,
+                    "cultra_3": 0.2,
+                    "cultra_4": 0.2,
+                    "cultra_5": 0.2,
+                    "cultra_6": 0.2,
+                    "cultra_7": 0.2,
+                    "clteff_1": 1.13,
+                    "clteff_2": 1.13,
+                    "clteff_3": 1.00,
+                    "clteff_4": 1.13
+                }
+            ]
+        },
+        "soils": [
+            {
+                "udsl": 0.0,
+                "ldsl": 2.0,
+                "bdsl": 1.30,
+                "fcsl": 0.27808,
+                "wpsl": 0.10316,
+                "ecsl": 0.80,
+                "frsl": 0.01,
+                "fssl": 0.40,
+                "csl": 0.19,
+                "omsl": 0.01,
+                "wcsl": 0.08,
+                "hcsl": 0.00065,
+                "phsl": 7.00
+            },
+            {
+                "udsl": 2.0,
+                "ldsl": 5.0,
+                "bdsl": 1.30,
+                "fcsl": 0.27808,
+                "wpsl": 0.10316,
+                "ecsl": 0.20,
+                "frsl": 0.04,
+                "fssl": 0.40,
+                "csl": 0.19,
+                "omsl": 0.01,
+                "wcsl": 0.06,
+                "hcsl": 0.00065,
+                "phsl": 7.00
+            }
+        ],
+        "weather": {
+            "usexdrvrs": 0,
+            "weatherData": [
+                {
+                    "dom": 1,
+                    "moy": 1,
+                    "year": 2000,
+                    "day": 1,
+                    "maxTemp": 14.95,
+                    "minTemp": 6.93,
+                    "precip": 0
+                },
+                {
+                    "dom": 2,
+                    "moy": 1,
+                    "year": 2000,
+                    "day": 2,
+                    "maxTemp": 15.91,
+                    "minTemp": 5.22,
+                    "precip": 0.022
+                },
+                {
+                    "dom": 3,
+                    "moy": 1,
+                    "year": 2000,
+                    "day": 3,
+                    "maxTemp": 17.65,
+                    "minTemp": 7.58,
+                    "precip": 0
+                }
+            ]
+        }
+    }
+}

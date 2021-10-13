@@ -42,7 +42,6 @@ jsonInit() {
 }
 
 jsonFmtData100() {
-    jsonInit
     comeback=0
     while read line; do
         header=$(echo "$line" | grep -Po "^-.*-" | sed -E 's/-//g')
@@ -95,11 +94,11 @@ jsonFmtSoils() {
     # init json obj
     echo "        \"soils\": [" >> $jsonFile
     # get soils data keys
-    keyList=()
-    while read line; do
-        value=$(echo $line | grep -Po "^.*?::" | sed -E 's/://g')
-        keyList+=("$value")
-    done < soils.delineated
+    keyList=("udsl" "ldsl" "bdsl" "fcsl" "wpsl" "ecsl" "frsl" "fssl" "csl" "omsl" "wcsl" "hcsl" "phsl")
+    # while read line; do
+    #     value=$(echo $line | grep -Po "^.*?::" | sed -E 's/://g')
+    #     keyList+=("$value")
+    # done < soils.delineated
 
     # append to json
     while read line; do
@@ -116,10 +115,72 @@ jsonFmtSoils() {
         echo "            }," >> $jsonFile
     done < soils.in
     sed -i '$ s/,//' $jsonFile
-    echo "        ]" >> $jsonFile
+    echo "        ]," >> $jsonFile
 }
 
+jsonFmtWeather() {
+    #init json obj
+    echo "        \"weather\": {" >> $jsonFile
+
+    # get driver mode
+    driverMode=$(cat sitepar.in | grep "usexdrvrs" | grep -Po "^.")
+    echo "            \"usexdrvrs\": $driverMode,
+            \"weatherData\": [" >> $jsonFile
+    driverOptions=()
+    case $driverMode in
+        0)
+            driverOptions=( "dom" "moy" "year" "day" "maxTemp" "minTemp" "precip")
+            echo "weathermode: no extra drivers"
+        ;;
+        1)
+            driverOptions=( "dom" "moy" "year" "day" "maxTemp" "minTemp" "precip" "solrad" "relhum" "windspeed")
+            echo "weathermode: PET drivers"
+        ;;
+        2)
+            driverOptions=( "dom" "moy" "year" "day" "maxTemp" "minTemp" "precip" "solradflux" "predef")
+            echo "weathermode: psyn drivers"
+        ;;
+        3)
+            driverOptions=( "dom" "moy" "year" "day" "maxTemp" "minTemp" "precip" "solrad" "relhum" "windspeed" "solradflux" "predef")
+            echo "weathermode: both"
+        ;;
+        4)
+            driverOptions=( "dom" "moy" "year" "day" "maxTemp" "minTemp" "precip" "avgsolrad" "evi")
+            echo "weathermode: EVI"
+        ;;
+        *)
+            echo "weathermode: unset"
+        ;;
+    esac
+
+    while read line; do
+        trim="$line"
+        echo "                {" >> $jsonFile
+        for key in "${driverOptions[@]}"; do
+            value=$(echo $trim | sed -E 's/$/ /g' | grep -Po "^.*? ")
+            trim=$(echo $trim | perl -pe "s|^$value?\s||g")
+            value=$(echo "$value" | sed -E 's/ //g')
+            echo "                    \"$key\": $value," >> $jsonFile
+        done
+        sed -i '$ s/,//' $jsonFile
+        echo "                }," >> $jsonFile
+    done < SantaBarbaraCA_Prism_2000.wth
+    sed -i '$ s/,//' $jsonFile
+    echo "
+            ]
+        }" >> $jsonFile
+}
+
+jsonEnd() {
+    echo "    }
+}" >> $jsonFile
+}
+
+getPairs
+jsonInit
 jsonFmtData100
 jsonFmtSoils
+jsonFmtWeather
+jsonEnd
 
 echo "done"
