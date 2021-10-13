@@ -8,7 +8,7 @@ pairFile=pairs.delineated
 
 # cleanup before start
 rm $jsonFile &> /dev/null
-dos2unix *.100
+dos2unix *.100 &> /dev/null
 
 # dump Data100 key-value pairs into file
 getPairs() {
@@ -87,9 +87,39 @@ jsonFmtData100() {
     done < $pairFile
     sed -i '$ s/,//' $jsonFile
     echo "                }
-            ]," >> $jsonFile
+            ]
+        }," >> $jsonFile
 }
 
-getPairs
+jsonFmtSoils() {
+    # init json obj
+    echo "        \"soils\": [" >> $jsonFile
+    # get soils data keys
+    keyList=()
+    while read line; do
+        value=$(echo $line | grep -Po "^.*?::" | sed -E 's/://g')
+        keyList+=("$value")
+    done < soils.delineated
+
+    # append to json
+    while read line; do
+        trim="$line"
+        echo "            {" >> $jsonFile
+        for key in "${keyList[@]}"
+        do
+            value=$(echo "$trim" | sed -E 's/$/ /g' | grep -Po "^.*? ")
+            trim=$(echo $trim | perl -pe "s|^$value?\s||g")
+            value=$(echo "$value" | sed -E 's/( |\r\n)//g')
+            echo "                \"$key\": $value," >> $jsonFile
+        done
+        sed -i '$ s/,//' $jsonFile
+        echo "            }," >> $jsonFile
+    done < soils.in
+    sed -i '$ s/,//' $jsonFile
+    echo "        ]" >> $jsonFile
+}
+
 jsonFmtData100
+jsonFmtSoils
+
 echo "done"
