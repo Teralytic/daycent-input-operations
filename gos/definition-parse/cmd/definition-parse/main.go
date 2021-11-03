@@ -43,7 +43,7 @@ func openFile(fileName string) []string {
 	return fileTextLines
 }
 
-func handle(lines []string) ([]string, []string, []string, []string) {
+func handle(lines []string) ([]string, []string, []string) {
 	var description []string
 	var descriptionLine string
 	var fmtKeyMatch string
@@ -51,8 +51,7 @@ func handle(lines []string) ([]string, []string, []string, []string) {
 
 	var descriptionList []string
 	var keyList []string
-	var minRangeList []string
-	var maxRangeList []string
+	var rangeList []string
 
 	keyLine := regexp.MustCompile(`^(?P<key>\w+.[0-9,]*[\)]?)\s\s+(?P<rem>.*)`)
 	keyLineName := keyLine.SubexpIndex("key")
@@ -63,10 +62,6 @@ func handle(lines []string) ([]string, []string, []string, []string) {
 
 	getRange := regexp.MustCompile(`^\s+Range:(?P<range>.*)`)
 	rangeName := getRange.SubexpIndex("range")
-
-	getMinMax := regexp.MustCompile(`(?P<min>^.*?)\s[\w]+\s(?P<max>.*$)`)
-	min := getMinMax.SubexpIndex("min")
-	max := getMinMax.SubexpIndex("max")
 
 	for i := 0; i < len(lines); i++ {
 		if keyLine.MatchString(lines[i]) {
@@ -88,15 +83,10 @@ func handle(lines []string) ([]string, []string, []string, []string) {
 			match := getRange.FindStringSubmatch(lines[i])
 			rangeMatch = match[rangeName]
 			if rangeMatch != "" {
-				matchRanges := getMinMax.FindStringSubmatch(rangeMatch)
-				fmt.Println(fmtKeyMatch)
-				fmt.Println("min: ", matchRanges[min])
-				fmt.Println("max:", matchRanges[max])
-				minRangeList = append(minRangeList, strings.TrimSpace(matchRanges[min]))
-				maxRangeList = append(maxRangeList, strings.TrimSpace(matchRanges[max]))
+				fmt.Println(rangeMatch)
+				rangeList = append(rangeList, strings.TrimSpace(rangeMatch))
 			} else {
-				minRangeList = append(minRangeList, "")
-				maxRangeList = append(maxRangeList, "")
+				rangeList = append(rangeList, "")
 			}
 
 		} else if getRegLine.MatchString(lines[i]) {
@@ -108,7 +98,7 @@ func handle(lines []string) ([]string, []string, []string, []string) {
 			continue
 		}
 	}
-	return descriptionList, keyList, minRangeList, maxRangeList
+	return descriptionList, keyList, rangeList
 }
 
 func yamlInit(file *os.File) {
@@ -147,15 +137,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Crop"
+                          type: string
+                        description:
+                          description: "describes the specific Crop"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -166,15 +161,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Cultivation Method"
+                          type: string
+                        description:
+                          description: "describes the specific Cultivation Method"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -185,15 +185,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Fertilization Method"
+                          type: string
+                        description:
+                          description: "describes the specific Fertilization Method"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -204,15 +209,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Fire"
+                          type: string
+                        description:
+                          description: "describes the specific Fire"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -223,15 +233,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Cultivation Method"
+                          type: string
+                        description:
+                          description: "describes the specific Cultivation Method"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -242,15 +257,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Grazing option"
+                          type: string
+                        description:
+                          description: "describes the specific Grazing option"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -261,15 +281,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Harvest methods"
+                          type: string
+                        description:
+                          description: "describes the specific harvest methods"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -280,15 +305,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific irrigation option"
+                          type: string
+                        description:
+                          description: "describes the specific irrigation option"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -299,15 +329,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Organic Materials"
+                          type: string
+                        description:
+                          description: "describes the specific Organic materials"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -318,15 +353,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Site variables"
+                          type: string
+                        description:
+                          description: "describes the specific Site variables"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -337,15 +377,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Tree options"
+                          type: string
+                        description:
+                          description: "describes the specific Tree options"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}
@@ -356,15 +401,20 @@ func writeToYaml(fileList []string, files fileList) {
                   type: array
                   items:
                     type: object
-                    properties:`
+                    properties:
+                        identifier:
+                          description: "identifier for a specific Tree removal options"
+                          type: string
+                        description:
+                          description: "describes the specific Tree removal options"
+                          type: string`
 			file.Write([]byte(header))
-			descriptionList, keyList, minRangeList, maxRangeList := handle(openFile(fileList[i]))
+			descriptionList, keyList, rangeList := handle(openFile(fileList[i]))
 			for i := 0; i < len(keyList); i++ {
 				elem := `
                         ` + keyList[i] + `:
                           description: "` + descriptionList[i] + `"
-                          minimum: "` + minRangeList[i] + `"
-                          maximum: "` + maxRangeList[i] + `"
+                          x-range: "` + rangeList[i] + `"
                           type: number`
 				file.Write([]byte(elem))
 			}

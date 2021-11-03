@@ -451,7 +451,7 @@ dmpflx         Dampens strong fluxes of water between soil layers
 hpotd          hydraulic water potential of deep storage layer
             Range:
 
-ksatd           saturated hydraulic conductivity of deep storage layer \
+ksatd           saturated hydraulic conductivity of deep storage layer
             Range:
 
 tbmin           minimum temperature for bottom soil layer
