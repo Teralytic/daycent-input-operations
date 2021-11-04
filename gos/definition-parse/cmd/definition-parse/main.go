@@ -98,6 +98,10 @@ func handle(lines []string) ([]string, []string, []string) {
 			continue
 		}
 	}
+
+	keyList = append(keyList, strings.TrimSpace(fmtKeyMatch))
+	descriptionList = append(descriptionList, strings.TrimSpace(descriptionLine))
+	rangeList = append(rangeList, strings.TrimSpace(rangeMatch))
 	return descriptionList, keyList, rangeList
 }
 
@@ -416,6 +420,7 @@ func writeToYaml(fileList []string, files fileList) {
                           description: "` + descriptionList[i] + `"
                           x-range: "` + rangeList[i] + `"
                           type: number`
+				fmt.Println(keyList[i])
 				file.Write([]byte(elem))
 			}
 		default:
