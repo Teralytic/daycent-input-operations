@@ -1,4 +1,71 @@
 Fixed parameters file "fix.100" will contain these values:
+
+varat11(1,1)    Maximum C/N ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(2,1)    Minimum C/N ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(3,1)    Amount of N present when minimum ratio applies
+            Range: ? to ?
+
+varat11(1,2)    Maximum C/P ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(2,2)    Minimum C/P ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(3,2)    Amount of P present when minimum ratio applies
+            Range: ? to ?
+
+varat11(1,3)    Maximum C/S ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(2,3)    Minimum C/S ratio for material entering surface som1, 
+                som1c(1)
+            Range: ? to ?
+
+varat11(3,3)    Amount of S present when minimum ratio applies
+            Range: ? to ?
+
+varat12(1,1)   Maximum C/N ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(2,1)   Minimum C/N ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(3,1)    Amount of N present when minimum ratio applies
+            Range: ? to ?
+
+varat12(1,2)    Maximum C/P ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(2,2)    Minimum C/P ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(3,2)    undocumented variable
+            Range: ? to ?
+
+varat12(1,3)    Maximum C/S ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(2,3)    Minimum C/S ratio for material entering soil som1, 
+                som1c(2)
+            Range: ? to ?
+
+varat12(3,3)    Amount of S present when minimum ratio applies
+            Range: ? to ?
+
 adep(1)         depth of soil layer 1 (only nlayer+1 values used) (cm)
             Range: ? to ?
 

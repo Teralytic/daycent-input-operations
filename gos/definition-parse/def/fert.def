@@ -39,6 +39,6 @@ ninhtm          number of weeks to simulate the effect of the nitrogen
 frac_nh4        fraction of N fertilizer that is NH4+ (ammonium)
             Range: 0.0 to 1.0
 
-frac_no2        fraction of N fertilizer that is NO3- (nitrate)
+frac_no3        fraction of N fertilizer that is NO3- (nitrate)
             Range: 0.0 to 1.0
 

@@ -1,4 +1,7 @@
 Organic matter additions file "omad.100" will contain these values:
+omadtyp         Organic matter addition type
+            Range: ? to ?
+
 astgc           grams of C added with the addition of organic matter (g/m2)
             Range: 0.0 to 9999.0
 

@@ -1,4 +1,113 @@
 Tree file "tree.100" will contain these values:
+fmrsplai(7)     none
+            Range: ? to ?
+
+fgresp(7)       none
+            Range: ? to ?
+
+fkmrspmx(7)     none
+            Range: ? to ?
+
+wooddr(7)       none
+            Range: ? to ?
+
+npp2cs          none
+            Range: ? to ?
+
+
+favail(1)       fraction of N available per day to plants
+            Range: ? to ?
+
+favail(3)       Fraction of S available per day to plants
+            Range: ? to ?
+
+favail(4)       Minimum fraction of P available per day to plants
+            Range: ? to ?
+
+favail(5)       Maximum fraction of P available per day to plants
+            Range: ? to ?
+
+favail(6)       Mineral N in surface layer corresponding to maximum 
+                fraction of P available
+            Range: ? to ?
+
+fmrsplai(1)     X1 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is less than 
+                (fmrsplai (3) * optimal leaf carbon) for a forest system
+            Range: ? to ?
+
+fmrsplai(2)     Y1 value for line function that decreases maintenance 
+                respiration based on optimal leaf carbon when the amount of 
+                carbon in the carbohydrate storage pool is less than  (fmrsplai (3) 
+                * optimal leaf carbon) for a forest system
+            Range: ? to ?
+
+fmrsplai(3)     X2 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is less than  (fmrsplai(3) * optimal leaf 
+                carbon) for a forest system 
+                OR 
+                X1 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is between (fmrsplai (3) * optimal leaf 
+                carbon) and  (fmrsplai (5) * optimal leaf carbon) for a forest 
+                system
+            Range: ? to ?
+
+fmrsplai(4)     Y2 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is less than (fmrsplai (3) * optimal leaf 
+                carbon) for a forest system 
+                OR 
+                Y1 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is between  (fmrsplai (3) * optimal 
+                leaf carbon) and (fmrsplai (5) * optimal leaf carbon) for a forest 
+                system
+            Range: ? to ?
+
+fmrsplai(5)     X2 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is between (fmrsplai (3) * optimal leaf 
+                carbon) and (fmrsplai (5) * optimal leaf carbon) for a forest 
+                system
+            Range: ? to ?
+
+fmrsplai(6)     Y2 value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is between (fmrsplai (3) * optimal leaf 
+                carbon) and (fmrsplai (5) * optimal leaf carbon) for a forest 
+                system 
+                OR 
+                Y value for line function that decreases maintenance respiration 
+                based on optimal leaf carbon when the amount of carbon in the 
+                carbohydrate storage pool is greater than  (fmrsplai (5) * optimal 
+                leaf carbon) for a forest system
+            Range: ? to ?
+
+furgdys         Number of days of unrestricted wood growth in a deciduous 
+                forest system
+            Range: ? to ?
+
+flsgres         Deciduous forest late season growth restriction factor
+            Range: ? to ?
+
+fngddl(1)       Length of fruit growing season in growing degree days. The default value is 0, or no 
+                fruit growth
+            Range: ? to ?
+
+fngddl(2)       Base temperature for the growing degree day. Default value is 0 °C
+            Range: ? to ?
+
+fngddl(3)       Maximum temperature for growing degree day. Temperatures above this level add 
+                no additional benefit to the growing season. Default 100 ̊ C
+            Range: ? to ?
+
+fnftim          Fruit fall time in months. This is the total time it takes for the tree to shed fruit after 
+                growth is complete. The default value is one month. A 0 input prevents ripe fruit fall
+            Range: ? to ?
+
 decid           type of forest
                   = 0 if forest is continuous
                   = 1 if forest is temperature-deciduous
