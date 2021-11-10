@@ -3837,7 +3837,7 @@
                           description: "Fraction of fine root production that goes into mature roots"
                           x-range: "0.0 to 1.0"
                           type: number
-                        mrtfrac:
+                        wmrtfrac:
                           description: "Fraction of fine root production that goes into mature roots"
                           x-range: "0.0 to 1.0"
                           type: number

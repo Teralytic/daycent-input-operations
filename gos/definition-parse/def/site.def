@@ -1691,7 +1691,7 @@ forstg(3)       retranslocation S storage pool for forest (g S m-2)
 mrtfrac       Fraction of fine root production that goes into mature roots
             Range: 0.0 to 1.0
 
-mrtfrac       Fraction of fine root production that goes into mature roots
+wmrtfrac       Fraction of fine root production that goes into mature roots
             Range: 0.0 to 1.0
 
 ammoni          no description, undocumented variable
