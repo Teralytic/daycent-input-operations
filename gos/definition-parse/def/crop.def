@@ -5,11 +5,56 @@ cafue           unknown variable in 100 files
 emax            unknown variable in 100 files
             Range: ? to ?
 
+tmxbio          Maximum above-ground plant biomass for the 
+                crop at the end of growing season. Also the 
+                theoretical maximum crop biomass where no 
+                more methane is emitted by the plant (g 
+                biomass m−2) default value: 1260 (rice)
+            Range: ? to ?
+
 curgdys         Number of days of unrestricted growth in a grass/crop system
             Range: ? to ?
 
 clsgres         Grass/crop late season growth restriction factor
             Range: 0.0 to 1.0
+
+
+favail(1)       fraction of N available per day to plants
+            Range: ? to ?
+
+favail(3)       Fraction of S available per day to plants
+            Range: ? to ?
+
+favail(4)       Minimum fraction of P available per day to plants
+            Range: ? to ?
+
+favail(5)       Maximum fraction of P available per day to plants
+            Range: ? to ?
+
+favail(6)       Mineral N in surface layer corresponding to maximum 
+                fraction of P available
+            Range: ? to ?
+
+wscoeff(1,1)    Water Stress Coefficient used to calculate the water stress 
+                multiplier on potential growth based on the relative water content 
+                of the wettest soil layer in the rooting zone (maxrwcf, 0-1)
+            Range: 0.2 to 0.5
+
+wscoeff(1,2)    Water Stress Coefficient used to calculate the water stress 
+                multiplier on potential growth based on the relative water content 
+                of the wettest soil layer in the rooting zone.
+            Range: 6.0 to 30.0
+
+wscoeff(2,1)    Water Stress Coefficient used to calculate the water stress 
+                multiplier on potential growth based on the relative water 
+                content of the wettest soil layer in the rooting zone (maxrwcf, 0-
+                1)
+            Range: 0.2 to 0.5
+
+wscoeff(2,2)    Water Stress Coefficient used to calculate the water stress 
+                multiplier on potential growth based on the relative water 
+                content of the wettest soil layer in the rooting zone.
+            Range: 6.0 to 30.0
 
 npp2cs(1)       The amount of C allocated to carbohydrate storage as a fraction of 
                 net primary production.  A value of 1.0 means that the amount of 

@@ -437,73 +437,76 @@ sorpmx          maximum P sorption potential for a soil
 
 *** sitepar.in additional values
 sublim          Multiplier on sublimation
-            Range:
+            Range: ? to ?
 
 reflec          vegetation reflectivity/albedo
-            Range:
+            Range: ? to ?
 
 albedo          snow albedo
-            Range:
+            Range: ? to ?
 
 dmpflx         Dampens strong fluxes of water between soil layers 
-            Range:
+            Range: ? to ?
 
 hpotd          hydraulic water potential of deep storage layer
-            Range:
+            Range: ? to ?
 
 ksatd           saturated hydraulic conductivity of deep storage layer
-            Range:
+            Range: ? to ?
 
 tbmin           minimum temperature for bottom soil layer
-            Range:
+            Range: ? to ?
 
 tbmax           maximum temperature for bottom soil layer
-            Range:
+            Range: ? to ?
 
 dmpfct          damping factor for calculating soil temperature by layer
-            Range:
+            Range: ? to ?
 
 timlag          days from Jan 1 to coolest temp at bottom of soil (days)
-            Range:
+            Range: ? to ?
     
 ncoeff          minimum water/temperature limitation coefficient for 
                 nitrify
-            Range:
+            Range: ? to ?
 
 dnstrt          turn off respiration restraint on denitrification starting on 
                 this day days
-            Range:
+            Range: ? to ?
 
 dnend           turn off respiration restraint on denitrification ends on this 
                 day
-            Range:
+            Range: ? to ?
 
 nadjfc          maximum proportion of nitrified N lost as N2O @ field 
                 capacity
-            Range:
+            Range: ? to ?
 
 nadjwp         minimum proportion of nitrified N lost as N2O @ wilting 
                 point
-            Range:
+            Range: ? to ?
 
 maxnit             maximum daily nitrification amount
             Range:
 
 mino3          fraction of new net mineralization that goes to NO3 (0.0-
                 1.0)  
-            Range:
+            Range: ? to ?
 
 wfpsnip         adjustment on inflection point for the water filled pore 
                 space effect on denitrification curve
-            Range:
+            Range: ? to ?
 
 n2n2oa          N2/N2O ratio adjustment factor for computing the N2/N2O 
                 ratio during non-flooded conditions. Values > 1.0 increase 
                 this ratio, values (0.0-1.0) decrease this ratio. For flooded 
                 conditions see FLN2OR in fix.100.
-            Range:
+            Range: ? to ?
 
 *** External nutrient input parameters
+afue            no description, undocumented variable
+            Range: ? to ?
+
 epnfa(1)        intercept value for determining the effect of annual
                 precipitation on atmospheric N fixation (wet and dry
                 deposition) (g/m2/y/cm precip)
@@ -1004,4 +1007,819 @@ snow            snow pack water content (cm of H2O)
 *** sitepar.in additional inputs
 snwins          snow effect on soil surface temp  
                 0 = not insulating, 1 = insulating
-            Range:
+            Range: ? to ?
+
+*** soil parameters from soil.in
+sldpmx(1)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(1)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(1)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(1)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(1)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(1)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(1)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(1)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(1)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(2)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(2)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(2)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(2)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(2)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(2)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(2)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(2)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(2)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(3)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(3)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(3)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(3)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(3)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(3)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(3)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(3)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(3)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(4)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(4)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(4)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(4)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(4)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(4)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(4)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(4)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(4)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(5)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(5)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(5)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(5)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(5)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(5)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(5)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(5)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(5)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(6)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(6)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(6)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(6)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(6)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(6)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(6)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(6)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(6)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(7)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(7)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(7)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(7)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(7)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(7)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(7)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(7)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(7)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(8)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(8)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(8)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(8)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(8)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(8)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(8)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(8)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(8)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(9)       no description, undocumented variable
+            Range: ? to ?
+
+slblkd(9)       no description, undocumented variable
+            Range: ? to ?
+
+slfldc(9)       no description, undocumented variable
+            Range: ? to ?
+
+slwltp(9)       no description, undocumented variable
+            Range: ? to ?
+
+slecof(9)       no description, undocumented variable
+            Range: ? to ?
+
+sltcof(9)       no description, undocumented variable
+            Range: ? to ?
+
+slorgf(9)       no description, undocumented variable
+            Range: ? to ?
+
+slclim(9)       no description, undocumented variable
+            Range: ? to ?
+
+slsatc(9)       no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(10)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(10)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(10)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(10)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(10)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(10)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(10)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(10)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(10)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(11)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(11)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(11)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(11)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(11)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(11)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(11)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(11)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(11)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(12)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(12)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(12)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(12)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(12)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(12)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(12)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(12)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(12)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(13)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(13)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(13)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(13)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(13)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(13)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(13)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(13)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(13)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(14)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(14)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(14)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(14)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(14)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(14)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(14)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(14)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(14)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(15)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(15)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(15)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(15)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(15)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(15)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(15)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(15)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(15)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(16)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(16)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(16)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(16)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(16)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(16)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(16)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(16)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(16)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(17)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(17)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(17)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(17)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(17)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(17)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(17)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(17)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(17)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(18)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(18)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(18)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(18)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(18)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(18)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(18)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(18)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(18)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(19)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(19)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(19)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(19)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(19)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(19)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(19)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(19)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(19)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(20)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(20)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(20)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(20)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(20)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(20)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(20)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(20)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(20)      no description, undocumented variable
+            Range: ? to ?
+
+sldpmx(21)      no description, undocumented variable
+            Range: ? to ?
+
+slblkd(21)      no description, undocumented variable
+            Range: ? to ?
+
+slfldc(21)      no description, undocumented variable
+            Range: ? to ?
+
+slwltp(21)      no description, undocumented variable
+            Range: ? to ?
+
+slecof(21)      no description, undocumented variable
+            Range: ? to ?
+
+sltcof(21)      no description, undocumented variable
+            Range: ? to ?
+
+slorgf(21)      no description, undocumented variable
+            Range: ? to ?
+
+slclim(21)      no description, undocumented variable
+            Range: ? to ?
+
+slsatc(21)      no description, undocumented variable
+            Range: ? to ?
+
+*** Enhanced extend parameters
+rmetcs(1,1)     no description, undocumented variable
+            Range: ? to ?
+
+rmetcs(1,2)     no description, undocumented variable
+            Range: ? to ?
+
+rmetcs(2,1)     no description, undocumented variable
+            Range: ? to ?
+
+rmetcs(2,2)     no description, undocumented variable
+            Range: ? to ?
+
+rcemet(1,1)     no description, undocumented variable
+            Range: ? to ?
+
+
+rcemet(1,2)     no description, undocumented variable
+            Range: ? to ?
+
+
+rcemet(1,3)     no description, undocumented variable
+            Range: ? to ?
+
+
+rcemet(2,1)     no description, undocumented variable
+            Range: ? to ?
+
+
+rcemet(2,2)     no description, undocumented variable
+            Range: ? to ?
+
+
+rcemet(2,3)     no description, undocumented variable
+            Range: ? to ?
+
+rstrlg(1)       no description, undocumented variable
+            Range: ? to ?
+
+
+rstrlg(2)       no description, undocumented variable
+            Range: ? to ?
+
+rcewd1(1)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd1(2)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd1(3)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd2(1)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd2(2)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd2(3)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd3(1)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd3(2)       no description, undocumented variable
+            Range: ? to ?
+
+
+rcewd3(3)       no description, undocumented variable
+            Range: ? to ?
+
+cstg(1,1)       no description, undocumented variable
+            Range: ? to ?
+
+
+cstg(1,2)       no description, undocumented variable
+            Range: ? to ?
+
+
+cstg(2,1)       no description, undocumented variable
+            Range: ? to ?
+
+
+cstg(2,2)       no description, undocumented variable
+            Range: ? to ?
+
+crpstg(1)       retranslocation N storage pool for grass/crop (g N m-2)
+            Range: ? to ?
+
+crpstg(2)       retranslocation P storage pool for grass/crop (g P m-2)
+            Range: ? to ?
+
+crpstg(3)       retranslocation S storage pool for grass/crop (g S m-2) 
+            Range: ? to ?
+
+forstg(1)       retranslocation N storage pool for forest (g N m-2)
+            Range: ? to ?
+
+forstg(2)       retranslocation P storage pool for forest (g P m-2)
+            Range: ? to ?
+
+forstg(3)       retranslocation S storage pool for forest (g S m-2)
+            Range: ? to ?
+
+mrtfrac       Fraction of fine root production that goes into mature roots
+            Range: 0.0 to 1.0
+
+mrtfrac       Fraction of fine root production that goes into mature roots
+            Range: 0.0 to 1.0
+
+ammoni          no description, undocumented variable
+            Range: ? to ?
+
+nitrat(1)       no description, undocumented variable
+            Range: ? to ?
+
+
+nitrat(2)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(3)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(4)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(5)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(6)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(7)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(8)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(9)       no description, undocumented variable
+            Range: ? to ?
+
+nitrat(10)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(11)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(12)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(13)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(14)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(15)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(16)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(17)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(18)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(19)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(20)      no description, undocumented variable
+            Range: ? to ?
+
+nitrat(21)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(1)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(2)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(3)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(4)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(5)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(6)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(7)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(8)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(9)       no description, undocumented variable
+            Range: ? to ?
+
+swcini(10)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(11)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(12)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(13)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(14)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(15)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(16)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(17)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(18)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(19)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(20)      no description, undocumented variable
+            Range: ? to ?
+
+swcini(21)      no description, undocumented variable
+            Range: ? to ?
